@@ -5,7 +5,7 @@
 *   2)find_min _max: 递归和非递归的方式进行实现；
 *       非递归：考虑base基准情况
 *   3) insert: 插入元素的关键字时：考虑tree是否为空；tree不为空时，元素是否已存在
-*   4) delete_x: 遍历得到元素位置，还得考虑该位置包含两个child和一个child的情况、
+*   4) delete_x: 遍历得到元素位置，还得考虑该位置包含两个child和一个child的情况。
 */
 #include "tree.h"
 #include <stdio.h>

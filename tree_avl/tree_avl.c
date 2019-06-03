@@ -77,3 +77,11 @@ static position single_rotate_withleft(position k2) /* k2表示插入：插入�
 
 /* 执行双旋转 */
 /* k3 只有一个左子树 */
+static position double_rotate_withleft(position k3)
+{
+    /* rotate between k1 and k2 */
+    k3->left = single_rotate_withright(k3->left);
+
+    /* rotate between k3 and k2 */
+    return single_rotate_withleft(k3);
+}

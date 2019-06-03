@@ -18,6 +18,7 @@ AvlTree delete_x(ElementType x, AvlTree t);
 ElementType retrieve(position p);
 
 
+
 #endif
 
 /* struct file */
@@ -25,6 +26,6 @@ struct AvlNode{
 
     ElementType element;
     AvlTree left;
-    AvlTree righe;
+    AvlTree right;
     int height;
 };
