@@ -9,17 +9,9 @@
         
 */
 
-
-typedef struct ListNode List;
-
-struct ListNode
-{
-    int mValue;
-    List *pNext;
-};
-
 #include <stdio.h>
 #include <stdlib.h>
+#include "one_list.h"
 
 /************************** insert node to tail**************** */
 void addToTail(List **pHead, int value)     /* **pHead 指向指针的指针，插入节点的时候改变头指针； */
@@ -105,62 +97,31 @@ void RemoveNode(List **pHead, int value)
 void print(List *pHead)
 {
     while(pHead != NULL){
-        printf("list value: %d --> ", pHead->mValue);
+        printf("%d\t", pHead->mValue);
         pHead = pHead->pNext;
     }
     printf("\n");
 }
-void test1()
-{
-    List *phead = malloc(sizeof(struct ListNode));
-    phead->mValue = 5;
-    phead->pNext = NULL;
+// void test()
+// {
+//     List *phead = malloc(sizeof(struct ListNode));
+//     phead->mValue = 5;
+//     phead->pNext = NULL;
     
-    //test addtoTail
-    addToTail(&phead, 7);       /* 指向指针的指针调用，传递的是地址； */
+//     //test addtoTail
+//     addToTail(&phead, 7);       /* 指向指针的指针调用，传递的是地址； */
     
-    //test addToSomewhere
-    addToSomewhere(&phead, 4);
-    print(phead);
-    //test remove
-    RemoveNode(&phead, 6);
-
-}
-
-
-
-/***********print_list_reverse*****************/
-// 面试题6：从尾到头打印链表
-// 题目：输入一个链表的头结点，从尾到头反过来打印出每个结点的值。
-
-/*
-*   1.题目信息：是否可以改变指针指向
-        a.反序打印链表：栈的方式进行push and pop
-        b.栈也是递归，通过递归实现
-*/
-
-// List creatstack(List s)
-// {
-
-// }
-// List stackPush(int value)   /* 向栈中插入某个值 */
-// {
-//     List *stackNode;
-//     stackNode = malloc(sizeof(struct ListNode));
-//     if(stackNode == NULL)   printf("out of space!")
+//     //test addToSomewhere
+//     addToSomewhere(&phead, 4);
+//     print(phead);
+//     //test remove
+//     RemoveNode(&phead, 6);
 
 // }
 
-// void printListStack(List *pHead)
+// /* 函数单独测试 */
+// int main()
 // {
-//     List *pNode = pHead;
-//     while(pNode != NULL){
-
-//     }
+//     test();
+//     return 0;
 // }
-
-int main()
-{
-    test1();
-    return 0;
-}
