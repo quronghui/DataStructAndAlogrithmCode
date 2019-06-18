@@ -37,6 +37,7 @@ struct construct_binary_tree
 
 #define arrayLength 8
 
+/*  */
 BinaryTreeNode *ConstructTree(int *startPreorder, int *endPreorder, int *startInorder, int *endInorder);
 
 /* 两个遍历数组传入函数Construct，用来调用ConstructTree */
