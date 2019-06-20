@@ -15,12 +15,12 @@
 
 /* 用于存储堆栈元素和指向栈顶部分的指针 */
 static STACK_TYPE *stack;
-static size_t stack_size;             /* 堆栈数组的动态分配大小 */
+static size_t stack_size;       /* 堆栈数组的动态分配大小 */
 static int top_element = -1;    /* 数组的下标 */
 
 void create_stack(size_t size )     /* 动态堆栈的创建 */
 {
-    assert( size == 0 );    //未创建
+    assert( stack_size == 0 );    //未创建
     stack_size = size;
     stack = malloc(sizeof(STACK_TYPE) * stack_size);
     assert( stack != NULL );
@@ -31,7 +31,7 @@ void destory_stack(void)
     assert( stack_size > 0 );
     stack_size = 0;
     free(stack);
-    stack == NULL;
+    stack = NULL;
 }
 
 /**************** push pop top *****************/
@@ -52,7 +52,7 @@ void pop(void)
 
 STACK_TYPE top(void)
 {
-    assert( is_empty() );
+    assert( !is_empty() );
     return stack[top_element];
 }
 
