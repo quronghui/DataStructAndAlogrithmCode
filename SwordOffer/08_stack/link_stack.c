@@ -24,7 +24,7 @@ typedef struct link_stack StackNode;
 /***********Parameter************/ 
 struct link_stack
 {
-    int mValue;
+    STACK_TYPE mValue;
     StackNode *pNext;
 };
 

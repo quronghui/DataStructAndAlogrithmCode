@@ -77,7 +77,7 @@ BinaryTreeNode *CreateBinaryTreeNode(int value)
     return pNode;
 }
 
-/******************连接二叉树的节点******************/
+/******************连接二叉树的节点：二叉树的连接，太不智能了，需要改一下******************/
 // 父节点加上两个儿子节点
 void ConnectTreeNode(BinaryTreeNode *parent, BinaryTreeNode *left, BinaryTreeNode *right)
 {
