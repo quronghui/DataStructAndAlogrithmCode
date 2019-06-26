@@ -8,6 +8,8 @@
         查找树种是否有和插入节点相同的节点；
     3.do_pre_order
         通过递归的方式：实现三种遍历的方式；
+    4. delete_node
+        删除某一个节点，有三种情况
 */
 #include "tree_interface.h"
 #include <stdio.h>
@@ -92,6 +94,26 @@ void pre_order_traverse( void (*callback)(TREE_TYPE value) ){
     do_pre_order_traverse(tree, callback);
 }
 
+/************************删除某一个节点********************************/
+// 得找到它的父节点才行;不使用find函数
+void delete(TREE_TYPE value)
+{
+    TreeNode *delete_node = find(value);    /* 记录删除节点的位置 */
+    // 先查找此节点是否存在
+    assert( delete_node != NULL);  // find 函数返回的是一个指针，判断不为空
+
+    // 根据这个节点判断有几个孩子
+    while (delete_node->left != NULL || delete_node->right != NULL)
+    {
+        /* code */
+    }
+
+    // 没有孩子节点的情况，直接释放这个节点 
+    free(delete_node);
+    delete_node = NULL;    
+    
+}
+
 /*********************test funcation*************************/
 void test()
 {
@@ -104,9 +126,15 @@ void test()
     insert(11);
 
     do_pre_order_traverse(tree, pre_order_print);
+    printf("\n");
 
     TREE_TYPE value = *find(10);    // 要学会看返回值的类型，根据类型写功能函数
-    printf("%d", value);
+    printf("%d\n", value);
+
+    // delete 测试
+    delete(5);
+    do_pre_order_traverse(tree, pre_order_print);
+    printf("\n");
 
 }
 

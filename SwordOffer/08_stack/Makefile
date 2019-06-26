@@ -33,14 +33,6 @@ link_stack.o: link_stack.c stack_interface.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
-# link_stack:	main.o link_stack.o 
-# 	$(CC) $^ -o $@
-# main.o: main.c stack_interface.h
-# 	$(CC) $(CFLAGS) -c $< -o $@
-# link_stack.o: link_stack.c stack_interface.h
-# 	$(CC) $(CFLAGS) -c $< -o $@
-
-
 #clean
 clean:	
 	@echo "cleaning project"
