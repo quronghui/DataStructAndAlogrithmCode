@@ -73,6 +73,7 @@ bool insertValue(List *pHead, int value)
     else 
         pHead->pwd = pNew;      /* 根节点的指针指向最后节点 */
     
+    /***重复代码**/
     // // 添加到链表中
     // if(pNode != NULL){      /* 插入点之后中有节点，插入的位置不在末尾 */
     //     pNew->fwd = pNode;         /* 重复代码 */
