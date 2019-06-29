@@ -39,7 +39,7 @@ void DeleteRepeatNode(List **pHead)
             needDelete = true;
         // 如果在pNode节点这里没有重复
         if(!needDelete){
-            pPreNode = pNode;
+            pPreNode = pNode;           //保存前驱节点
             pNode = pNode->pNext;
         }
         else{
