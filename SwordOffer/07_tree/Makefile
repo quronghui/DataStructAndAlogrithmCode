@@ -3,8 +3,9 @@ CC = gcc
 CFLAGS = -g -Wall
 
 # Objs
-all:	construct_binary_tree next_binary_tree_node link_binary_search_tree
-
+# all:	construct_binary_tree  link_binary_search_tree
+# all:	next_binary_tree_node
+all:	Substructure_inTree
 #####################目标文件的编译##########
 construct_binary_tree:	construct_binary_tree.o 
 	$(CC) $^ -o $@
@@ -12,32 +13,39 @@ construct_binary_tree:	construct_binary_tree.o
 next_binary_tree_node:	next_binary_tree_node.o 
 	$(CC) $^ -o $@
 
-static_array_binary_tree:	static_array_binary_tree.o 
-	$(CC) $^ -o $@
+# 数组构建二叉树，同一套功能函数
+# static_array_binary_tree:	static_array_binary_tree.o 
+# 	$(CC) $^ -o $@
 
 link_binary_search_tree:	link_binary_search_tree.o
 	$(CC) $^ -o $@
 
+Substructure_inTree:	Substructure_inTree.o 
+	$(CC) $^ -o $@
+
 ############# .o文件的编译#####################
-construct_binary_tree.o:	construct_binary_tree.c 
+construct_binary_tree.o:	construct_binary_tree.c tree_interface.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 next_binary_tree_node.o:	next_binary_tree_node.c 
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# 数组构建二叉树：使用的是同一套接口定义：所以需要隐藏一个；
 # static_array_binary_tree.o: static_array_binary_tree.c tree_interface.h
 # 	$(CC) $(CFLAGS) -c $< -o $@
 
 link_binary_search_tree.o: link_binary_search_tree.c tree_interface.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-
+Substructure_inTree.o: Substructure_inTree.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 #clean
 clean:	
 	@echo "cleaning project"
 	-rm construct_binary_tree next_binary_tree_node
-	-rm link_binary_search_tree
+	-rm link_binary_search_tree  
+	-rm Substructure_inTree
 	-rm *.o 
 	@echo "cleaning complie"
 .PHONY:	clean

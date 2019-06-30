@@ -23,22 +23,14 @@
         c.递归划分 ConstructTree_Parameter 四个参数，完成二叉树的构建
 */
 
-typedef struct construct_binary_tree BinaryTreeNode;
-
-struct construct_binary_tree
-{
-    int mValue;
-    BinaryTreeNode *pLeft;
-    BinaryTreeNode *pRight;
-};
-
 #include <stdio.h>
 #include <stdlib.h>
+#include "tree_interface.h"
 
 #define arrayLength 8
 
-/*  */
-BinaryTreeNode *ConstructTree(int *startPreorder, int *endPreorder, int *startInorder, int *endInorder);
+/* 构建二叉树前的判断条件，接口函数 */
+static BinaryTreeNode *ConstructTree(int *startPreorder, int *endPreorder, int *startInorder, int *endInorder);
 
 /* 两个遍历数组传入函数Construct，用来调用ConstructTree */
 BinaryTreeNode *Construct(int *preorder, int *inorder, int length)
@@ -51,11 +43,11 @@ BinaryTreeNode *Construct(int *preorder, int *inorder, int length)
 }
 
 /* ConstructTree : 创建四个指针，指向数组的最开始和结束为止 */
-BinaryTreeNode *ConstructTree(int *startPreorder, int *endPreorder, int *startInorder, int *endInorder)
+static BinaryTreeNode *ConstructTree(int *startPreorder, int *endPreorder, int *startInorder, int *endInorder)
 {
     /* 前序遍历中第一个元素，便是树的根节点值 */
     int rootValue = startPreorder[0];
-    BinaryTreeNode *root = malloc(sizeof(struct construct_binary_tree));
+    BinaryTreeNode *root = malloc(sizeof(BinaryTreeNode));
     root->mValue = rootValue;
     root->pLeft = root->pRight = NULL;
 
@@ -97,13 +89,6 @@ BinaryTreeNode *ConstructTree(int *startPreorder, int *endPreorder, int *startIn
 }
 
 /*******************test code****************************/
-// void print(BinaryTreeNode *tree)
-// {
-//     int depth = 0;
-//     if(tree -> pLeft != NULL || tree->pRight !=NULL)
-//         depth++;
-    
-// }
 void test()
 {
     //const int length = 9;   /*使用变量定义长度时，不可在定义时同时进行初始化赋值，需要在之后进行赋值*/

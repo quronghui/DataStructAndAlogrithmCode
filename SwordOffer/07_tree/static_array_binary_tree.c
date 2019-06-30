@@ -77,6 +77,7 @@ static void do_pre_order_traverse( int current, void (*callback)(TREE_TYPE value
         do_pre_order_traverse( right_child(current), callback );
     }
 }
+
 // 用户接口函数
 void pre_order_traverse( void (*callback)(TREE_TYPE value) )
 {
