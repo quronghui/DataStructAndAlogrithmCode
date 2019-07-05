@@ -8,11 +8,6 @@
         a. struct 结构体的定义和初始化？
         b. queue 何时为空的判断？
         c. delete 删除节点的方式
-    3. 问题：
-    a. 只允许一次性入队，入队和出队交叉就会出现错误；
-        问题解决// 这里又是容易错误的地方; 需要保证队列为空的时候，rear and front 都指向头结点
-        if(queue->rear == first_node)
-            queue->rear = queue->front;
 */
 
 #include <stdio.h>
@@ -32,8 +27,8 @@ QueueNode *create_queue()
 
     queue->front = queue;   // 初始化 front and rear 指向头结点
     queue->rear = queue;
+    queue->rear->pNext = queue;
 
-    queue->rear->pNext = NULL;
     return queue;
 }
 // 链式队列的释放 
@@ -80,11 +75,8 @@ void delQueue(QueueNode *queue)
         first_node = queue->front->pNext;
         queue->front->pNext = first_node->pNext;   /* 问题出在：queue->front 此时指向的是头结点,不是数据 */
     }
-    // 这里又是容易错误的地方; 需要保证队列为空的时候，rear and front 都指向头结点
     if(queue->rear == first_node)
         queue->rear = queue->front;
-    free(first_node);
-
 }
 
 QUEUE_TYPE first(QueueNode *queue)
@@ -92,7 +84,11 @@ QUEUE_TYPE first(QueueNode *queue)
     if(!is_empty(queue))
         return queue->front->pNext->mValue;     /* queue->front 在插入元素的时候没有进行初始化 */
     else 
-        return FALSE;
+        return NULL;
+
+    // assert(!is_empty(queue));
+    //    return queue->front->pNext->mValue;     /* queue->front 在插入元素的时候没有进行初始化 */
+
 }
 
 

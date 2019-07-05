@@ -9,7 +9,7 @@
 typedef struct link_binary_search_tree BinaryTreeNode;
 struct link_binary_search_tree
 {
-    TREE_TYPE           mValue;
+    TREE_TYPE          mValue;
     BinaryTreeNode    *pLeft;
     BinaryTreeNode    *pRight;
 };

@@ -16,7 +16,8 @@
 */
 #include <stdio.h>
 #include <assert.h>
-#include "queue_interface.h"
+
+#define QUEUE_TYPE int
 
 #define QUEUE_SIZE  4                  /* 队列中元素最大值 */
 #define ARRAY_SIZE  (QUEUE_SIZE + 1)    /* 数组实现的时候，需要多一个空位置 */

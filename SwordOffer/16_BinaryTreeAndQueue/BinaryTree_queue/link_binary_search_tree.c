@@ -17,7 +17,6 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
-// #include "link_queue_Binary.h"
 
 static BinaryTreeNode *tree;  /* 指向根节点的指针 */
 

@@ -1,9 +1,11 @@
 // 测试栈的几种实现方式是否正确
 /* 三种测试方式：由于函数存在交叉，不能一起编译 */
 
-#include "stack_interface.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <assert.h>
+// #include "array_stack_interface.h"
+#include "link_stack_interface.h"
 
 /************- 静态数组：结构长度固定 *******************/
 /*****************static_array_stack.c***************/
@@ -30,45 +32,78 @@
 // {
 //     puts("test_malloc_array_stack: ");
 
-//     create_stack(4);    /* 创建一个大小为N=4 的动态数组 */
+//     StackArrayNode *stack = array_create_stack(10);    /* 创建一个大小为N=4 的动态栈数组 */
     
 //     /**********入栈*************/
 //     for (int i = 15; i < 19; i++)
 //     {
-//         push(i);
+//         push(stack, i);
 //     }
 
 //     /***********return and delete***************/
-//     while( !is_empty() ){
-//         printf("%d ", top());
-//         pop();
+//     while( !is_empty(stack) ){
+//         printf("%d ", top(stack));
+//         pop(stack);
 //     }
 //     putchar('\n');
 
-//     destory_stack();    /* 释放动态空间 */
+//     destory_stack(stack);    /* 释放动态空间 */
 
 // }
 
-/**************动态分配的链式结构********************/
-/*******************link_stack.c******************/
+
+/**************传递两个参数的：动态分配的链式结构********************/
+/*******************link_ParamterStack.c******************/
 void test_link_stack()
 {
     puts("test_link_stack: ");
 
-    /**********入栈*************/
-    for (int i = 20; i < 24; i++)
+    // 定义一个栈顶；
+    StackNode *stack = link_create_stack();
+
+    /**************进行入栈*************/ 
+    for (STACK_TYPE i = 25; i < 27; i++)
     {
-        push(i);
+        push(stack, i);
     }
     /***********return and delete***************/
-    while( !is_empty() ){
-        printf("%d ", top());
-        pop();
+    while ( !is_empty(stack) ){
+        printf("%d ", top(stack));
+        pop(stack);
+        printf("%d ", top(stack));
     }
     putchar('\n'); 
+    free(stack);
 
-    destory_stack();
+    destory_stack(stack);
 }
+
+// 测试栈构造的析构函数
+// void test_stack_funcation()
+// {
+//     puts("test_stack_funcation: ");
+
+//     /***定义析构函数的结构体,初始化****/
+//     StackFuncation *Stack = malloc(sizeof(StackFuncation));
+//     Stack->push = push;
+//     Stack->pop = pop;
+//     Stack->top = top;
+
+//     /*入栈*/
+//     for (int i = 20; i < 24; i++)
+//     {
+//         Stack->push(i);
+//     }
+//      /***********return and delete***************/
+//     while( !is_empty() ){
+//         printf("%d ", Stack->top());
+//         Stack->pop();
+//     }
+//     putchar('\n'); 
+
+//     destory_stack();
+// }
+
 
 /********************int main*******************/
 int main()
@@ -78,6 +113,10 @@ int main()
     // test_malloc_array_stack();
 
     test_link_stack();
+
+    // test_stack_funcation();
+
+
 
     return 0;
 }

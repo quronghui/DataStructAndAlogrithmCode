@@ -3,9 +3,11 @@ CC = gcc
 CFLAGS = -g -Wall
 
 # Objs
-# all:	construct_binary_tree  link_binary_search_tree
-# all:	next_binary_tree_node
-all:	Substructure_inTree
+# all:	link_binary_search_tree   
+# all:	next_binary_tree_node construct_binary_tree
+# all:	Substructure_inTree
+# all:	mirror_recursively_binatyTree
+all:	is_Symmetrical
 #####################目标文件的编译##########
 construct_binary_tree:	construct_binary_tree.o 
 	$(CC) $^ -o $@
@@ -17,10 +19,16 @@ next_binary_tree_node:	next_binary_tree_node.o
 # static_array_binary_tree:	static_array_binary_tree.o 
 # 	$(CC) $^ -o $@
 
-link_binary_search_tree:	link_binary_search_tree.o
+link_binary_search_tree:	link_binary_search_tree.o  
 	$(CC) $^ -o $@
 
 Substructure_inTree:	Substructure_inTree.o 
+	$(CC) $^ -o $@
+
+mirror_recursively_binatyTree:	mirror_recursively_binatyTree.o 
+	$(CC) $^ -o $@
+
+is_Symmetrical:	is_Symmetrical.o link_binary_search_tree.o  
 	$(CC) $^ -o $@
 
 ############# .o文件的编译#####################
@@ -34,18 +42,24 @@ next_binary_tree_node.o:	next_binary_tree_node.c
 # static_array_binary_tree.o: static_array_binary_tree.c tree_interface.h
 # 	$(CC) $(CFLAGS) -c $< -o $@
 
-link_binary_search_tree.o: link_binary_search_tree.c tree_interface.h
+link_binary_search_tree.o: link_binary_search_tree.c tree_interface.h 
 	$(CC) $(CFLAGS) -c $< -o $@
 
 Substructure_inTree.o: Substructure_inTree.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+mirror_recursively_binatyTree.o: mirror_recursively_binatyTree.c tree_interface.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+is_Symmetrical.o: is_Symmetrical.c tree_interface.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 #clean
 clean:	
 	@echo "cleaning project"
 	-rm construct_binary_tree next_binary_tree_node
-	-rm link_binary_search_tree  
-	-rm Substructure_inTree
+	-rm link_binary_search_tree  Substructure_inTree
+	-rm  mirror_recursively_binatyTree is_Symmetrical
 	-rm *.o 
 	@echo "cleaning complie"
 .PHONY:	clean

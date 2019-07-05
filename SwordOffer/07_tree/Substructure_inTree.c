@@ -75,7 +75,7 @@ bool Equal(double num1, double num2)
         return false;
 }
 
-/***********************构建两棵树*******************/
+/***********************构建两棵树二叉树*******************/
 // 创建节点
 TreeNode *CreatTreeNode(double value)
 {

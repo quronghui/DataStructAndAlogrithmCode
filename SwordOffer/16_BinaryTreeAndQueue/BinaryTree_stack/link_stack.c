@@ -75,6 +75,7 @@ STACK_TYPE top(StackNode *stack)
     return stack->pNext->mValue;
 }
 
+
 /****************is_empty and is_full**********************/
 int is_empty(StackNode *stack)
 {

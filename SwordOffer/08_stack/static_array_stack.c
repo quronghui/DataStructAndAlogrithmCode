@@ -10,8 +10,7 @@
 
 #include <stdio.h>
 #include <assert.h>     /* 断言函数，用于判断表达式正确与否 */
-#include "stack_interface.h"
-
+#include "array_stack_interface.h"
 #define STACK_SIZE 4
 
 /* 静态数组实现方式，堆栈已经定义了 */
