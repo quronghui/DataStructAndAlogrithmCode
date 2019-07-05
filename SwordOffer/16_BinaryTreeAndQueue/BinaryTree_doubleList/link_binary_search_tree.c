@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
+// #include "link_queue_Binary.h"
 
 static BinaryTreeNode *tree;  /* 指向根节点的指针 */
 
@@ -70,9 +71,9 @@ TREE_TYPE *find(TREE_TYPE value)
 void do_pre_order_traverse(BinaryTreeNode *current, void (*callback)(TREE_TYPE value))
 {
     if( current != NULL ){
-        callback(current->mValue);       //前序遍历函数
+        // callback(current->mValue);       //前序遍历函数
         do_pre_order_traverse (current->pLeft, callback);
-        // callback(current->mValue);          //中序遍历函数
+        callback(current->mValue);          //中序遍历函数
         do_pre_order_traverse (current->pRight, callback);
         // callback(current->mValue);          //后序遍历函数
 
@@ -134,18 +135,13 @@ void ConnectTree(BinaryTreeNode *pPatent, BinaryTreeNode *left, BinaryTreeNode *
 // 固定的创建二叉树
 BinaryTreeNode *CreateTree()
 {
-    // insert(8);
-    // insert(6);
-    // insert(10);
-    // insert(5);
-    // insert(7);
-    // insert(9);
-    // insert(11);
+    insert(8);
+    insert(6);
     insert(10);
     insert(5);
-    insert(12);
-    insert(4);
     insert(7);
+    insert(9);
+    insert(11);
 
     return tree;
 }

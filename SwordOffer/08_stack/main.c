@@ -67,15 +67,27 @@ void test_link_stack()
         push(stack, i);
     }
     /***********return and delete***************/
+    StackNode *copy = link_create_stack();
+    StackNode *recode = stack;
+    // 复制栈进行入栈
     while ( !is_empty(stack) ){
         printf("%d ", top(stack));
-        pop(stack);
-        printf("%d ", top(stack));
+        push(copy, top(stack));
+        // pop(stack);
+        stack = stack->pNext;
     }
     putchar('\n'); 
-    free(stack);
-
-    destory_stack(stack);
+    // 复制栈进行出栈，从而实现队列的功能；
+    while ( !is_empty(copy) ){
+        printf("%d ", top(copy));
+        pop(copy);
+    }
+    // 恢复初始栈的栈顶；
+    stack = recode;    
+    putchar('\n'); 
+    printf("%d ", top(stack));
+    
+    destory_stack(copy);
 }
 
 // 测试栈构造的析构函数
