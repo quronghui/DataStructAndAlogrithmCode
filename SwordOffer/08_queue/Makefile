@@ -3,8 +3,9 @@ CC	=	gcc
 CFLAGS =	-g -Wall
 
 #Objs
-all:	link_queue
+# all:	link_queue
 # all:	array_malloc_queue
+all:	maxSum_continueArray
 
 ################# 目标文件的编译################
 
@@ -35,10 +36,13 @@ array_malloc_queue.o: array_malloc_queue.c array_queue_interface.h
 link_queue.o: link_queue.c link_queue_interface.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
+
+
 #clean
 clean:	
 	@echo "cleaning project"
 	-rm static_array_queue array_malloc_queue link_queue
+	-rm maxSum_continueArray
 	-rm *.o 
 	@echo "cleaning complie"
 .PHONY:	clean

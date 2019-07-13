@@ -41,7 +41,7 @@ AvlTree insert(ElementType x, AvlTree t)
                 t = double_rotate_withleft(t);  /* 第二种插入：左右 */
         }
     }
-    /*insert light*/
+    /*insert right*/
     else if(x > t->element){
         t->right = insert(x, t->right);
         

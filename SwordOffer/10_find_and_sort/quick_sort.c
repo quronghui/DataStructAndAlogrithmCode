@@ -9,7 +9,7 @@
 */
 
 #include <stdio.h>
-
+#include "quick_sort.h"
 /******************swap交换函数*************************/
 static void swap( int *one , int *two)
 {
@@ -19,22 +19,24 @@ static void swap( int *one , int *two)
     *two = temp;
 }
 /***************根据枢纽元素：划分数组为两部分***************/
-static int partition(int data[], int length, int start, int end )
+// 交换的是地址，而不是值
+int partition(int *data, int length, int start, int end )
 {
     if(data == NULL || length < 0 || start < 0 || end >= length){
         printf("Invaild parameters:\n");
         return 0;
     }
     
-    int center = (start + end)/2;  // 中间枢纽元素
+    int center = (start + end)/2;       // 中间枢纽元素
     swap( &data[center], &data[end] );  /* 将枢纽元放在最后一个位置 */
 
     // 排序所有的元素，除了最后位置的枢纽元素；
     int small = start - 1;  // 为了排序时避免涉及到枢纽元素
     for( center = start; center < end; ++center ){
-        // 开始排序除了枢纽元素以前的元素
+        // 小于中间枢纽的元素进行交互
         if( data[center] < data[end] ){      //比较的还是枢纽元素
             ++ small;
+            // 这个不用加，不希望small出现异常 
             if( small != center )
                 swap(&data[center], &data[small]);
         }
@@ -48,37 +50,36 @@ static int partition(int data[], int length, int start, int end )
 }
 
 /***************递归：实现左右两部分的快速排序******************/
-void quick_sort( int data[], int length, int start, int end )
+void quick_sort( int *numbers, int length, int start, int end )
 {
     //assert( start != end);    // 这个直接把代码停了
     if(start == end)
         return;  
-
-    int center = partition( data, length, start, end);
-    if(center > start)
-        quick_sort( data, length, start, center-1 );
-    if( center < end )
-        quick_sort( data, length, center+1, end );    
+    int index = partition( numbers, length, start, end);
+    if(index > start)
+        quick_sort( numbers, length, start, index-1 );
+    if( index < end )
+        quick_sort( numbers, length, index+1, end );    
 }
 
 /********************test code***********************/
-void test()
-{
-    int data[] = { 3, 10, 6, 8, 2, 5, 1, 7, 9, 4 };
-    int length = sizeof(data) / sizeof(int);
-    for(int i=0; i<length; i++)
-        printf(" %d ", data[i]);
-    printf("\n");
+// void test()
+// {
+//     int data[] = { 3, 10, 6, 8, 2, 5, 1, 7, 9, 4 };
+//     int length = sizeof(data) / sizeof(int);
+//     for(int i=0; i<length; i++)
+//         printf(" %d ", data[i]);
+//     printf("\n");
 
-    // 快速排序
-    quick_sort(data, length, 0, length-1);
-    for(int i=0; i<length; i++)
-        printf(" %d ", data[i]);
-    printf("\n");
-}   
+//     // 快速排序
+//     quick_sort(data, length, 0, length-1);
+//     for(int i=0; i<length; i++)
+//         printf(" %d ", data[i]);
+//     printf("\n");
+// }   
 
-int main()
-{
-    test();
-    return 0;
-}
+// int main()
+// {
+//     test();
+//     return 0;
+// }
