@@ -1,655 +1,83 @@
-# Data_Struct
-
-## Data Struct And Algorithm C description
-### stack
-
-1. stack -- pointer
-
-   ```
-   /* stack.c
-   *   1) 入栈和出栈：都是在栈顶进行操作的；
-   *   2）入栈：新元素加入，分配存储空间；
-   *   3）top 指向栈顶的，栈顶都是header 空指针，元素的操作都是检查第二个栈；
-   *   4) 站的空间地址：由高位指向低位的
-   */
-   ```
-
-2. stack -- arrray
-
-   ```
-   /*
-   *   array_stack.h
-   *   栈：通过数组实现
-   *   1) 数组定义：定义到结构体中，定义成指针数组；
-   *   2) 数组做右值的时候，自动转换成指针；数组取元素，其实也是地址取元素
-   *   3)int TopOfStack; //表示数组的下标地址；int型能够自加；类似于next 
-   */
-   
-   /*
-   *   array_stack.c
-   *   栈：通过数组实现
-   *       除了数据的操作是通过数组的形式：下标进行访问元素
-   *   1) 数组大小,通过变量传进去；和malloc 创建的内存单元
-   *   2) s->TopOfStack 表示的是下标，数组下标的错误应该是负数; 判断栈数组是空的还是满的；通过下标判断
-   *   3) s->array[ ++s->TopOfStack ] 通过数组的方式：进行出栈和进栈
-   */
-   ```
-
-### queue
-
-1. queue -- array
-
-   ```
-   /*
-   *   array_queue.c
-   *   1)判断队列是否为空、满：定义了一个标志位，有数就加1
-   *   2)初始化时：q->front = 1;q->rear = 0 因为队尾rear还保存一个元素，满足出队
-   */
-   ```
 
 
-## Tree
+## **DataStructAndAlgorithmCdescription**
 
-### tree
-
-```
-/* 
-*   tree.c
-*   二叉查找树：用关键字表示
-*   1)find tree:查找到叶子节点，还没的话，返回NULL
-*   2)find_min _max: 递归和非递归的方式进行实现；
-*       非递归：考虑base基准情况
-*   3) insert: 插入元素的关键字时：考虑tree是否为空；tree不为空时，元素是否已存在
-*   4) delete_x: 遍历得到元素位置，还得考虑该位置包含两个child和一个child的情况。
-*/
-```
-
-### tree_AVL
-
-```
-/*
-*   tree_avl.c
-*	1)任意节点的 左子树和右子树高度最多差1的二叉查找树
-*/
-```
-
-## Hash 散列函数
-
-```
-/*
-*   hashval.c 
-*   1) 散列函数最好的选择；
-*   2) nextprime：空间大小是素数，减小不同的key分配到同一空间
-*   3) 分散链表的初始化：分配三个存储空间
-*/
-
-```
-
-## priority queue
-
-### binary heap
-
-```
-/* 
-*    binary_heap.c
-*   1) 数组实现二叉堆的存储
-×   2）二叉堆的性质：任意节点的关键字都小于其后裔的关键字
-*   
-*/
-```
-
-### left_heap
-
-```
-/*
-*   left_heap.c
-*   1) 通过指针实现堆树的合并merge；
-*	2) 任意节点X，左儿子的Npl >= 右儿子的Npl
-*/
-```
-
-### binomial_queue
-
-```
-二项队列：二项树的合并
-```
-
-
++ <数据结构和算法C描述> 书中的代码
 
 ## Sword Offer
 
-### 03_DuplicationArray
++ <剑指offer> 和 <C和指针> 书中的代码
+
+### 相关博客内容和题目汇集
+
+1. [数组](https://luckywater.top/2019/06/15/一维数组和二维数组的查找/)
+2. [字符串](https://luckywater.top/2019/06/26/String/)
+3. [链表](https://luckywater.top/2019/06/15/单链表和双链表插入/#more)
+4. [栈和队列](https://luckywater.top/2019/03/07/LinuxCStackAndQueue/)
+5. [树的应用](https://luckywater.top/2019/05/17/tree/)
+6. [算法和数据描述相关问题](https://luckywater.top/2019/05/25/algorithm-design/)
+7. [高质量代码需要考虑的方面 (16题-26题)]((https://luckywater.top/2019/06/26/高质量代码/#more))
+8. [优化时间和空间效率(39-52题](https://luckywater.top/2019/07/06/优化时间和空间效率/)
+
+### SwordOffer
+
+- [面试题3(一): 一维数组, 可以修改数组的情况下 ，找出数组中重复的数字](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/03_Array/duplicate_array.c)
+- [面试题3(二):一维数组 :不可修改数组的情况下，找出数组中重复的数字](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/03_Array/duplicate_no_edit_array.c)
+- [面试题 4： 二维数组中元素的查找，数组中重复的数字](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/04_FindInpartialySortMatrix/find_in_matrix.c)
+- [面试题5：string-- 替换字符串中的空格](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/string_replace.c)
+- [面试题6：link -- 从尾到头打印链表](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/print_link_form_tail_to_head.c)
+- [ 面试题 7 ：tree -- 根据前序遍历和中序遍历，构建一颗二叉树 ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/construct_binary_tree.c)
+- [面试题 8：tree-- 找一颗二叉树中序遍历的下一个节点，节点有指向父结点的指针](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/next_binary_tree_node.c)
+- [面试题10：algorithm -- 斐波那契数列，青蛙跳台阶](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/09_recursion_and_loop/fibonacci.c)
+- [面试题11：algorithm查找排序 -- 旋转数组的最小数字](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/rotating_array.c)
+- [面试题12：algorithm回溯法 -- 矩阵中的路径](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/11_backtracking/matrix_path.c)
+- [面试题13：algorithm回溯法 -- 机器人的运动范围](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/11_backtracking/moving_count.c)
+- [面试题14: algorithm动态规划 -- 剪绳子,给你一根长度为n绳子，请把绳子剪成m段](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/12_DynamicProgramming_GreedyAlogithm/Dynamic_maxProduct.c)
+- [面试题15: algorithm位运算 -- 计算一个整数转换为二进制后，1的个数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/13_bit_opreation/one_count.c)
+- [ 面试题 16: 高质量代码 --  不使用库函数，实现pow函数的功能，求base的exponent次方 ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/14_CodeQuality_Integrity/math_funcation_pow.c)
+- [面试题17：高质量代码 --  打印1到最大的n位数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/14_CodeQuality_Integrity/print_oneToMaxBit_number.c)
+- [  面试题18（一）：link --在O(1)时间删除链表结点 ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/delete_oneListNode.c)
+- [面试题18（二）：link -- 删除链表中重复的结点](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/delete_repeatNode.c)
+- [面试题19：string -- 正则表达式匹配](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/match_string.c)
+- [面试题20：string -- 表示数值的字符串。判断字符串，是不是数值](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/represent_number_string.c)
+- [面试题21：array -- 调整数组顺序使奇数位于偶数前面](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/03_Array/reorder_OddEven_array.c)
+- [面试题22：link -- 链表中倒数第k个结点](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/FindKth_ToTail.c)
+- [面试题23：link -- 链表中环的入口结点, 一个链表中包含环，如何找出环的入口结点？](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/EnterNode_LoopList.c)
+- [面试题24：link-- 反转链表(从第k-m个位置进行反转)](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/reverseList.c)
+- [面试题24(二)：link--  从倒数第k个节点反转链表](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/reverseList_FromTailH.c)
+- [面试题25：link-- 合并两个排序的链表](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/merge_orderList.c)
+- [ 面试题26：tree -- 树的子结构](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/Substructure_inTree.c)
+- [面试题27：tree --  二叉树的镜像  ]( https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/mirror_recursively_binatyTree.c)
+- [面试题28：tree --  对称的二叉树](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/is_Symmetrical.c)
+- [面试题29：array: 顺时针打印矩阵](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/04_FindInpartialySortMatrix/PrintMatrixClockwisely.c)
+- [面试题30:   stack -- 包含min函数的栈](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/08_stack/min_inStack.c)
+- [面试题31：stack -- 栈的压入、弹出序列.](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/08_stack/is_stackPopOrder.c)
+- [面试题32（一）：tree -- 不分行从上往下打印二叉树。 层级遍历二叉树](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/16_BinaryTreeAndQueue/BinaryTree_queue/printTree_fromTopToBottom.c)
+- [面试题32（二）：tree -- 分行从上到下打印二叉树。 每层打印之后换行](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/16_BinaryTreeAndQueue/BinaryTree_queue/printTreeLine.c)
+- [面试题32（三）：tree -- 之字形打印二叉树](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/16_BinaryTreeAndQueue/BinaryTree_stack/printZigzag.c)
+- [ 面试题33：tree -- 二叉搜索树的后序遍历序列。输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/verify_sequenceOfBST.c)
+- [面试题34：tree -- 打印二叉树中和为某一值的路径.](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/16_BinaryTreeAndQueue/BinaryTree_stack/findPth_binaryTree.c)
+- [面试题35：link -- 复杂链表的复制](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/17_ComplexList)
+- [面试题36：tree -- 二叉搜索树与双向链表.](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/16_BinaryTreeAndQueue/BinaryTree_doubleList/BinaryTree_Con_DoubleList.c)
+- [面试题37: 序列化二叉树]
+- [面试题38：string -- 字符串的排列](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/permutation_ofStrings.c)
+- [ 面试题39：O(time) --   数组中出现次数超过一半的数字. ](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/10_find_and_sort/moreHalfNum.c)
+- [面试题40：O(time) -- 最小的k个数](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/10_find_and_sort/getLeastNumber.c)
+- [面试题41：O(time) -- 数据流中的中位数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/08_stack/data_StreamMedian.c)
+- [面试题42：O(time) -- 连续子数组的最大和.](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/03_Array/maxSum_continueArray.c)
+- [面试题43：O(time) --从1到n整数中1出现的次数](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/05_String/numberOf_one.c)
+- [面试题44：O(time) -- 数字序列中某一位的数字. ](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/05_String/digitSequence.c)
+- [面试题45：O(time) --把数组排成最小的数](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/05_String/sortArrayForMinNumber.c)
+- [面试题46：O(time) --把数字翻译成字符串. ](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/05_String/translation_numberTostring.c)
+- [面试题47：algorithm动态规划 --礼物的最大价值](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/12_DynamicProgramming_GreedyAlogithm/get_MaxValue_inMatrix.c)
+- [面试题48：algorithm动态规划 -- 最长不含重复字符的子字符串.  扩展: 将这个长的字符串打印出来?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/12_DynamicProgramming_GreedyAlogithm/longSubstring_withoutDup.c)
+- [面试题49：O(time) -- 丑数. 题目：我们把只包含因子2、3和5的数称作丑数（Ugly Number)](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/03_Array/uglyNumber.c)
+- [面试题50（一）O(time) --字符串中第一个只出现一次的字符.](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/05_String/firstNotRepeatingChar.c)
+- [面试题50（二）：字符流中第一个只出现一次的字符.]
+- [ 面试题51：algorithm归并排序 -- 数组中的逆序对](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/inversePair_mergeSort.c)
+- [面试题52：list -- 两个链表的第一个公共结点. ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/firstCommonNode_inList.c)
+- [面试题53（一）：algorithm二分查找 --  数字在排序数组中出现的次数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/numberOfK_InSortArray.c)
+- [面试题53（二）algorithm二分查找 --  0到n-1中缺失的数字数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/missingNumber_increasingArray.c)
+- [面试题53（三）：algorithm二分查找 --  数组中数值和下标相等的元素](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/value_incArray.c)
+- 
 
-1. duplicate_array.c
-
-   ```
-   // 面试题3（一）：找出数组中重复的数字
-   // 题目：在一个长度为n的数组里的所有数字都在0到n-1的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，
-   // 也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。例如，如果输入长度为7的数组{2, 3, 1, 0, 2, 5, 3}，
-   // 那么对应的输出是重复的数字2或者3
-   ```
-   
-2. duplicate_no_edit_array.c
-
-   ```
-   // 面试题3（二）：不修改数组找出重复的数字
-   // 题目：在一个长度为n+1的数组里的所有数字都在1到n的范围内，所以数组中至
-   // 少有一个数字是重复的。请找出数组中任意一个重复的数字，但不能修改输入的
-   // 数组。例如，如果输入长度为8的数组{2, 3, 5, 4, 3, 2, 6, 7}，那么对应的
-   // 输出是重复的数字2或者3。
-   ```
-   
-3. reorder_OddEven_array.c
-
-   ```
-   // 面试题21：调整数组顺序使奇数位于偶数前面
-   // 题目：输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有
-   // 奇数位于数组的前半部分，所有偶数位于数组的后半部分。
-   ```
-   
-4. maxSum_continueArray.c
-
-   ```
-   // 面试题42：连续子数组的最大和
-   // 题目：输入一个整型数组，数组里有正数也有负数。数组中一个或连续的多个整数组成一个子数组。
-   // 求所有子数组的和的最大值。要求时间复杂度为O(n)。
-   ```
-
-   
-
-### 04_FindInpartialySortMatrix
-
-1. find_in_matrix.c
-
-   ```
-   // 面试题4：二维数组中的查找
-   // 题目：在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按
-   // 照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个
-   // 整数，判断数组中是否含有该整数。
-   ```
-
-2. mallocTwoD_array.c
-
-   ```
-   题目：如何动态申请二维数组空间
-   三种方式申请二维数组；
-       方法一：利用二级指针申请一个二维数组。
-       方法二：用数组指针形式申请一个二维数组。 调试一直在报错
-       方法三：用一个单独的一维数组来模拟二维数组
-   ```
-
-3. PrintMatrixClockwisely.c
-
-   ```
-   面试题29：顺时针打印矩阵
-   // 题目：输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。
-   // 考察边界条件的判断：全部梳理出来之后；就是顺序书写代码；
-   ```
-
-   
-
-### 05_String
-
-1. string_replace.c
-
-   ```
-   // 面试题5：替换空格
-   // 题目：请实现一个函数，把字符串中的每个空格替换成"%20"。例如输入“We are happy.”，
-   // 则输出“We%20are%20happy.”。
-   ```
-   
-2. match_string.c
-
-   ```
-   // 面试题19：正则表达式匹配
-   // 题目：请实现一个函数用来匹配包含'.'和'*'的正则表达式。
-   // 模式中的字符'.'表示任意一个字符，而'*'表示它前面的字符可以出现任意次（含0次）。
-   // 在本题中，匹配是指字符串的所有字符匹配整个模式。
-   // 例如，字符串"aaa"与模式"a.a"和"ab*ac*a"(b,c 选择0次)匹配，但与"aa.a"及"ab*a"均不匹配。
-   ```
-   
-3. Atio.c  Itoa.c
-
-   ```
-   题目：字符串转换到int类型，使用atoi函数可以轻松完成类型转换。
-   题目：Int型整数，转化为字符串；
-   ```
-
-4. represent_number_string.c
-
-   ```
-   // 面试题20：表示数值的字符串
-   // 题目：请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。
-   // 例如，字符串“+100”、“5e2”、“-123”、“3.1416”及“-1E-16”都表示数值，
-   // 但“12e”、“1a3.14”、“1.2.3”、“+-5”及“12e+5.4”都不是
-   ```
-
-5. permutation_ofStrings.c
-
-   ```
-   // 面试题38：字符串的排列
-   // 题目：输入一个字符串，打印出该字符串中字符的所有排列。例如输入字符串abc，
-   // 则打印出由字符a、b、c所能排列出来的所有字符串abc、acb、bac、bca、cab和cba。
-   ```
-
-6. numberOf_one.c
-
-   ```
-   // 面试题43：从1到n整数中1出现的次数
-   // 题目：输入一个整数n，求从1到n这n个整数的十进制表示中1出现的次数。
-   // 例如输入12，从1到12这些整数中包含1 的数字有1，10，11和12，1一共出现了5次。
-   ```
-
-   
-
-### 06_List
-
-1. one_list.c
-
-   ```
-   /*
-   *   题目：单链表 节点的插入和删除
-   *   1) 每插入一个节点，都要为新节点分配内存；
-   *   2) 删除节点，需要将其free，避免野指针；
-       Parameter：
-           a) **phead 头指针：定义为指向指针的指针, 防止（*root）根指针为空时，的内存地址被直接修改；
-           b) 单链表：头指针是要保存数据的，和双向链表有点区别。    
-   */
-   ```
-
-2. double_list.c
-
-   ```
-   /*
-   *   题目：双链表 节点的插入和删除
-   *   1) 双链表的插入有四种情况：
-   *       a.插入到链表中间；b.插入到起始位置；  
-   *       c.插入到末尾节点；d.插入到空链表中;   
-   ```
-   
-3. print_link_form_tail_to_head.c
-
-   ```
-   // 面试题6：从尾到头打印链表
-   // 题目：输入一个链表的头结点，从尾到头反过来打印出每个结点的值。
-   ```
-
-4. callback_use.c
-
-   ```
-   // 回调函数的应用:在一个单链表中查找一个指定值的函数。它的参数是一个指向链表第一个节点的指针，
-   // 一个指向我们需要查找的值的指针和一个函数指针，它所指向的函数用于比较存储于链表中的类型的值
-   ```
-
-5. delete_oneListNode.c
-
-   ```
-   // 面试题18（一）：在O(1)时间删除链表结点
-   // 题目：给定单向链表的头指针和一个结点指针，定义一个函数在O(1)时间删除该结点。
-   ```
-
-6. delete_repeatNode.c
-
-   ```
-   // 面试题18（二）：删除链表中重复的结点
-   // 题目：在一个排序的链表中，如何删除重复的结点？将重复的节点全部删除，只保留不重复的
-   // 5-7-9-9-11;  -->  5-7-11
-   ```
-
-7. FIndKth_ToTail.c
-
-   ```
-   // 面试题22：链表中倒数第k个结点
-   // 题目：输入一个链表，输出该链表中倒数第k个结点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾结点是倒数第1个结点。
-   // 例如一个链表有6个结点，从头结点开始它们的值依次是1、2、3、4、5、6。这个链表的倒数第3个结点是值为4的结点。
-   ```
-
-8. EnterNode_LoopList.c
-
-   ```
-   // 面试题23：链表中环的入口结点
-   // 题目：一个链表中包含环，如何找出环的入口结点？
-   ```
-
-9. reverseList.c
-
-   ```
-   // // 面试题24：反转链表
-   // 题目一：定义一个函数，输入一个链表的头结点，反转该链表并输出反转后链表的头结点。
-   // 题目二：定义一个函数，输入一个链表头结点，从链表中的第 k 个节点到 m个位置进行反转，返回反转链表的头结点；
-   //题目扩展三：将链表前面k个节点进行反转； 用题目二的思路
-   ```
-   
-10. reverseList_FromTailH.c
-
-    ```
-    // 面试题24(四)：反转链表，从链表的倒数第 H 个节点进行反转
-    // 为了方便：链表指针都从第一个节点开始计数为1
-    ​```
-    ```
-
-11. merge_orderList.c
-
-    ```
-    // // 面试题25：合并两个排序的链表
-    // 题目：输入两个递增排序的链表，合并这两个链表并使新链表中的结点仍然是按照递增排序的。
-    // 例如: list_one: 1-3-5-7; list_two: 2-4-6-8; 
-    // 链表合并之后：1-2-3-4-5-6-7-8; 
-    ```
-
-### 07_tree
-
-1. construct_binary_tree.c
-
-   ```
-   // 面试题7：重建二叉树
-   // 题目：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
-   //例如输入前序遍历序列{1, 2, 4, 7, 3, 5, 6, 8}和中序遍历序列{4, 7, 2, 1, 5, 3, 8, 6}，则重建出二叉树并输出它的头结点。
-   ```
-   
-2. static_array_binary_tree.c
-
-   ```
-   // 题目：静态数组实现二叉搜索树，能实现节点的插入，搜索，前序遍历
-   ```
-   
-3. link_binary_search_tree.c
-
-   ```
-   // 题目： 通过链式 构建二叉搜索树
-   // C 和指针上面的内容
-   ```
-
-4. next_binary_tree_node.c
-
-   ```
-   // 面试题8：二叉树的下一个结点
-   // 题目：给定一棵二叉树和其中的一个结点，如何找出中序遍历顺序的下一个结点？
-   // 树中的结点除了有两个分别指向左右子结点的指针以外，还有一个指向父结点的指针。
-   ```
-
-5. Substructure_inTree.c
-
-   ```
-   // 面试题26：树的子结构
-   // 题目：输入两棵二叉树A和B，判断B是不是A的子结构。
-   ```
-   
-6. mirror_recursively_binatyTree.c
-
-   ```
-   // 面试题27：二叉树的镜像
-   // 题目：请完成一个函数，输入一个二叉树，该函数输出它的镜像。
-   ```
-
-7. is_Symmetrical.c
-
-   ```
-   // 面试题28：对称的二叉树
-   // 题目：请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
-   // 不是二叉搜索树
-   ```
-   
-8. verify_sequenceOfBST.c
-
-   ```
-   // 面试题33：二叉搜索树的后序遍历序列
-   // 题目：输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则返回true，否则返回false。假设输入的数组的任意两个数字都互不相同。
-   // 题目扩展：思路一：判断一棵树是不是二叉树？（1）先得到它的后序遍历；（2）递归后续便利是否满足；
-       // 思路二： 直接递归检查，左边不为空的时候，小于其父节点
-   ```
-
-9. 
-
-​	
-
-### 08_stack 的实现
-
- 1. link_stack.c link_stack_interface.h
-
-    ```
-    // 题目一：动态链表实现堆栈,传递两个参数（stack and value）;
-    /*
-        1. 解题思路：
-            a. Create stack: 通过Create 创建函数后，就不需要在测试函数进行创建了，只需要接受返回值就行；
-            b. push(stack, value): 这样才符合插入的逻辑，给定插入的对象和插入的值；不然只给一个值，很容易造成误解；
-            c. 函数设计，我就只给一个接口，外部看不到设计，保留头指针与否，取决于自己设计的习惯；
-    */
-    ```
-    
- 2. array_malloc_stack.c  array_stack_interface.h
-
-    ```
-    // 动态分配数组的堆栈实现
-    /*解题思路：
-        a. 还是创建一个指针，通过指针间接引用数组，数组的下标；
-        b. 创建动态栈数组时：创建一个指针，创建一个数组；
-    */
-    ```
-
- 3. min_inStack.c
-
-    ```
-    // 面试题30：包含min函数的栈
-    // 题目：定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的min函数。
-    // 在该栈中，调用min、push及pop的时间复杂度都是O(1)。
-    /*
-    *   1.解题思路：
-            a. 创建两个栈，一个数据栈，一个最小值栈
-    ```
-
- 4. is_stackPopOrder.c
-
-    ```
-    // 面试题31：栈的压入、弹出序列
-    // 题目：输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。
-    // 假设压入栈的所有数字均不相等。例如序列1、2、3、4、5是某栈的压栈序列，序列4、5、3、2、1是该压栈序列对应的一个弹出序列，
-    // 但4、3、5、1、2就不可能是该压栈序列的弹出序列。
-    ```
-
-    
-
-### 08_queue
-
-1. link_queue.c   include "link_queue_interface.h"
-
-   ```
-   // 题目：通过链表实现队列；
-   // 在创建链式队列时，强烈建议初学者创建一个带有头节点的链表，这样实现链式队列会更简单。
-   ```
-   
-2. array_malloc_queue.c  array_queue_interface.h
-
-   ```
-   // 题目：通过动态数组实现循环队列
-   /*
-   *   1.注意问题：通过循环队列的方式实现接口；
-           a. 为了判断队列是否为满，循环队列要空出一个位置不用，想当于头结点，空出下标为0的值;
-           b. 为了满足条件，数组的大小要比队列的数量多1；
-   */
-   ```
-
-   
-
-
-### 09_recursion_and_loop
-
-1. fibonacci.c
-
-   ```
-   // 面试题：斐波那契数列，青蛙跳台阶
-   // 题目：写一个函数，输入n，求斐波那契（Fibonacci）数列的第n项。
-   ```
-
-### 10_find_and_sort
-
-1. quick_sort.c  quick_sort.h
-
-   ```
-   // 快速排序算法的实现
-   // 快速排序的接口文件 quick_sort.h
-   // 快速排序：基于Partition （划分）的函数；
-   ```
-   
-2. rotating_array.c
-
-   ```
-   // 面试题11：旋转数组的最小数字
-   // 题目：把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。
-   // 输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如数组
-   // {3, 4, 5, 1, 2}为{1, 2, 3, 4, 5}的一个旋转，该数组的最小值为1。
-   ```
-   
-3. moreHalfNum.c
-
-   ```
-   // 面试题39：数组中出现次数超过一半的数字
-   // 题目：数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
-   // 例如输入一个长度为9的数组{1, 2, 3, 2, 2, 2, 5, 4, 2}。
-   // 由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。
-   ```
-
-4. getLeastNumber.c
-
-   ```
-   // 面试题40：最小的k个数
-   // 题目：输入n个整数，找出其中最小的k个数。例如输入4、5、1、6、2、7、3、8
-   // 这8个数字，则最小的4个数字是1、2、3、4。
-   ```
-
-   
-
-### 11_backtracking
-
-1. matrix_path.c
-
-   ```
-   // // 面试题12：矩阵中的路径
-   // 题目：请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中任意一格开始，每一步可以在矩阵中向左、右、// 上、下移动一格。
-   // 如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。例如在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字// 母用下划线标出）。
-   // 但矩阵中不包含字符串“abfb”的路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入这个格子。
-   ```
-
-2. moving_count.c
-
-   ```
-   // 面试题13：机器人的运动范围
-   // 题目：地上有一个m行n列的方格。一个机器人从坐标(0, 0)的格子开始移动，它// 每一次可以向左、右、上、下移动一格，
-   // 但不能进入行坐标和列坐标的数位之和大于k的格子。
-   // 例如，当k为18时，机器人能够进入方格(35, 37)，因为3+5+3+7=18。但它不能进入方格(35, 38)，因为3+5+3+8=19。请问该机器人能够到达多少个格子？
-   ```
-
-### 12_DynamicProgramming_GreedyAlogithm
-
-1. Dynamic_maxProduct.c
-
-   ```
-   // 面试题14：剪绳子 :给你一根长度为n绳子，请把绳子剪成m段（m、n都是整数，n>1并且m≥1）。
-   // 每段的绳子的长度记为k[0]、k[1]、……、k[m]。k[0]*k[1]*…*k[m]可能的最大乘积是多少？
-   // 例如当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到最大的乘积18。
-   ```
-
-2. Greedy_maxProduct.c
-
-   ```
-   //  题目： 剪绳子：通过贪婪算法实现；
-   ```
-
-### 13_bit_opreation
-
-1. one_count.c
-
-   ```
-   //  面试题15：二进制中1的个数
-   // 题目：请实现一个函数，输入一个整数，输出该数二进制表示中1的个数。例如
-   // 把9表示成二进制是1001，有2位是1。因此如果输入9，该函数输出2。
-   
-   ```
-
-
-### 14_CodeQuality_Integrity
-
-1. math_funcation_pow.c
-
-   ```
-   // 面试题16：数值的整数次方
-   // 题目：实现函数double Power(double base, int exponent)，求base的exponent次方。
-   // 不得使用库函数，同时不需要考虑大数问题。
-   ```
-
-2. print_oneToMaxBit_number.c
-
-   ```
-   // 面试题17：打印1到最大的n位数
-   // 题目：输入数字n，按顺序打印出从1最大的n位十进制数。比如输入3，则打印出1、2、3一直到最大的3位数即999。
-   相当于考察数据结构[字符串]，算法实现[递归和循环]
-   ```
-
-
-### 15_Include_makefile
-
-1. 为了编写不同目录下Makefile 文件
-   + 方法：每个文件下一个Makefile
-   + 缺点：
-     + 但是子目录文件的make clean，要进入子目录才能进行;
-     + 更新子目录下的文件，需要重新进入子目录更新；
-   + 所以：不建议使用
-
-### 16_BinaryTreeAndQueue
-
-#### BinaryTree_queue
-
-1. printTree_fromTopToBottom.c
-
-   ```
-   // 面试题32（一）：不分行从上往下打印二叉树
-   // 题目：从上往下打印出二叉树的每个结点，同一层的结点按照从左到右的顺序打印。
-   ```
-
-2. printTreeLine.c
-
-   ```
-   // 面试题32（二）：分行从上到下打印二叉树
-   // 题目：从上到下按层打印二叉树，同一层的结点按从左到右的顺序打印，每一层打印到一行。
-   ```
-
-#### BinaryTree_stack
-
-1. printZigzag.c
-
-   ```
-   // 面试题32（三）：之字形打印二叉树
-   // 题目：请实现一个函数按照之字形顺序打印二叉树;
-   // 即第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，第三行再按照从左到右的顺序打印，其他行以此类推。
-   ```
-   
-2. findPth_binaryTree.c
-
-   ```
-   // 面试题34：二叉树中和为某一值的路径
-   // 题目：输入一棵二叉树和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。
-   // 从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
-   ```
-
-#### BinaryTree_doubleList
-
-1. BinaryTree_Con_DoubleList.c
-
-   ```
-   // 面试题36：二叉搜索树与双向链表
-   // 题目：输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。
-   // 要求不能创建任何新的结点，只能调整树中结点指针的指向。转换为的链表是排序
-   ```
-
-### 17_ComplexList
-
-1. complexListCopy.c  complexList.c
-
-   ```
-   // 面试题35：复杂链表的复制
-   // 题目：请实现函数ComplexListNode* Clone(ComplexListNode* pHead)，复制一个复杂链表。
-   // 在复杂链表中，每个结点除了有一个m_pNext指针指向下一个结点外，
-   // 还有一个m_pSibling 指向链表中的任意结点或者nullptr。
-   ```
-
-   

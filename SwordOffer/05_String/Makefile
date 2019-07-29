@@ -8,7 +8,11 @@ CFLAGS	=	-g -Wall
 # all:	numberOf_one
 # all:	Atio Itoa
 # all:	numberOf_one
-all:	digitSequence
+# all:	digitSequence
+# all:	sortArrayForMinNumber
+# all:	translation_numberTostring
+# all:	firstNotRepeatingChar
+all:	firstCharacterInStream
 
 # Objs 函数编译
 string_replace:	string_replace.o 
@@ -27,6 +31,14 @@ Itoa:	Itoa.o
 	$(CC) $^ -o $@
 digitSequence:	digitSequence.o 
 	$(CC) $^ -o $@ -lm
+sortArrayForMinNumber:	sortArrayForMinNumber.o 
+	$(CC) $^ -o $@ -lm
+translation_numberTostring:	translation_numberTostring.o 
+	$(CC) $^ -o $@ -lm
+firstNotRepeatingChar:	firstNotRepeatingChar.o
+	$(CC) $^ -o $@ 
+firstCharacterInStream:	firstCharacterInStream.o
+	$(CC) $^ -o $@ 
 
 # .o 文件的编译
 string_replace.o:	string_replace.c 
@@ -53,13 +65,28 @@ Itoa.o: Itoa.c
 digitSequence.o: digitSequence.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+sortArrayForMinNumber.o: sortArrayForMinNumber.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+translation_numberTostring.o: translation_numberTostring.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+firstNotRepeatingChar.o: firstNotRepeatingChar.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+firstCharacterInStream.o: firstCharacterInStream.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+
 
 #clean
 clean:	
 	@echo "cleaning project"
 	-rm string_replace match_string represent_number_string
 	-rm permutation_ofStrings numberOf_one Atio Itoa
-	-rm numberOf_one digitSequence
+	-rm numberOf_one digitSequence sortArrayForMinNumber
+	-rm translation_numberTostring firstNotRepeatingChar
+	-rm firstCharacterInStream
 	-rm *.o 
 	@echo "cleaning complie"
 .PHONY:	clean
