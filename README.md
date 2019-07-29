@@ -16,7 +16,7 @@
 4. [栈和队列](https://luckywater.top/2019/03/07/LinuxCStackAndQueue/)
 5. [树的应用](https://luckywater.top/2019/05/17/tree/)
 6. [算法和数据描述相关问题](https://luckywater.top/2019/05/25/algorithm-design/)
-7. [高质量代码需要考虑的方面 (16题-26题)]((https://luckywater.top/2019/06/26/高质量代码/#more))
+7. [高质量代码需要考虑的方面 (16题-26题)](https://luckywater.top/2019/06/26/高质量代码/)
 8. [优化时间和空间效率(39-52题](https://luckywater.top/2019/07/06/优化时间和空间效率/)
 
 ### SwordOffer
