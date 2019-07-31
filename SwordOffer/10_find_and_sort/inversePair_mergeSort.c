@@ -7,7 +7,7 @@
         b. 时间效率: O(n^2)
     2. 解题思路二:
         a. 采用归并排序的方式, 时间复杂度 O(nlog(n)), 空间复杂度是O(n);
-        b. 
+
 */
 #include <stdio.h>
 #include <stdlib.h>

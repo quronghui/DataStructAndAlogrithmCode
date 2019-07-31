@@ -8,7 +8,10 @@ CFLAGS = -g -Wall
 # all:	Substructure_inTree
 # all:	mirror_recursively_binatyTree
 # all:	is_Symmetrical
-all:	verify_sequenceOfBST
+# all:	verify_sequenceOfBST
+# all:	kNode_BinTree
+# all:	depth_tree 
+all:	balance_tree
 #####################目标文件的编译##########
 construct_binary_tree:	construct_binary_tree.o 
 	$(CC) $^ -o $@
@@ -35,7 +38,15 @@ is_Symmetrical:	is_Symmetrical.o link_binary_search_tree.o
 verify_sequenceOfBST:	verify_sequenceOfBST.o 
 	$(CC) $^ -o $@
 
-############# .o文件的编译#####################
+kNode_BinTree:	kNode_BinTree.o 	link_binary_search_tree.o 
+	$(CC)	$^	-o 	$@
+
+depth_tree:	depth_tree.o 	link_binary_search_tree.o 
+	$(CC)	$^	-o 	$@
+
+balance_tree:	balance_tree.o link_binary_search_tree.o 
+
+############# 文件的编译#####################
 construct_binary_tree.o:	construct_binary_tree.c tree_interface.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -61,13 +72,23 @@ is_Symmetrical.o: is_Symmetrical.c tree_interface.h
 verify_sequenceOfBST.o: verify_sequenceOfBST.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+kNode_BinTree.o: kNode_BinTree.c tree_interface.h
+	$(CC)	$(CFLAGS)	-c	$<	-o	$@
+
+depth_tree.o: depth_tree.c tree_interface.h
+	$(CC)	$(CFLAGS)	-c	$<	-o	$@
+
+balance_tree.o: balance_tree.c tree_interface.h
+	$(CC)	$(CFLAGS)	-c	$<	-o	$@
+
 #clean
 clean:	
 	@echo "cleaning project"
 	-rm construct_binary_tree next_binary_tree_node
 	-rm link_binary_search_tree  Substructure_inTree
 	-rm  mirror_recursively_binatyTree is_Symmetrical
-	-rm verify_sequenceOfBST
+	-rm verify_sequenceOfBST	kNode_BinTree	depth_tree	
+	-rm balance_tree
 	-rm *.o 
 	@echo "cleaning complie"
 .PHONY:	clean

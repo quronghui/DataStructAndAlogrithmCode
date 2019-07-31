@@ -71,9 +71,9 @@ TREE_TYPE *find(TREE_TYPE value)
 void do_pre_order_traverse(BinaryTreeNode *current, void (*callback)(TREE_TYPE value))
 {
     if( current != NULL ){
-        callback(current->mValue);       //前序遍历函数
+        // callback(current->mValue);       //前序遍历函数
         do_pre_order_traverse (current->pLeft, callback);
-        // callback(current->mValue);          //中序遍历函数
+        callback(current->mValue);          //中序遍历函数
         do_pre_order_traverse (current->pRight, callback);
         // callback(current->mValue);          //后序遍历函数
 

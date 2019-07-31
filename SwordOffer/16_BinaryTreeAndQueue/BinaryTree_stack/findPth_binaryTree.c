@@ -27,7 +27,7 @@ void findPath(BinaryTreeNode *pRoot, int expectedSum)
         printf("The tree is null.\n");
         return ;
     }
-    // 创建一个栈空间；
+    // 创建一个栈空间的头指针；
     StackNode *path = link_create_stack();
     int currentSum = 0;
 

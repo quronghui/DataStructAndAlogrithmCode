@@ -12,7 +12,9 @@ CFLAGS	=	-g -Wall
 # all:	sortArrayForMinNumber
 # all:	translation_numberTostring
 # all:	firstNotRepeatingChar
-all:	firstCharacterInStream
+# all:	firstCharacterInStream
+# all:	reverseSentence
+all:	leftRotateString
 
 # Objs 函数编译
 string_replace:	string_replace.o 
@@ -38,6 +40,11 @@ translation_numberTostring:	translation_numberTostring.o
 firstNotRepeatingChar:	firstNotRepeatingChar.o
 	$(CC) $^ -o $@ 
 firstCharacterInStream:	firstCharacterInStream.o
+	$(CC) $^ -o $@ 
+reverseSentence:	reverseSentence.o 
+	$(CC) $^ -o $@ 
+
+leftRotateString:	leftRotateString.o 
 	$(CC) $^ -o $@ 
 
 # .o 文件的编译
@@ -77,7 +84,11 @@ firstNotRepeatingChar.o: firstNotRepeatingChar.c
 firstCharacterInStream.o: firstCharacterInStream.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+reverseSentence.o: reverseSentence.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
+leftRotateString.o: leftRotateString.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 #clean
 clean:	
@@ -86,7 +97,7 @@ clean:
 	-rm permutation_ofStrings numberOf_one Atio Itoa
 	-rm numberOf_one digitSequence sortArrayForMinNumber
 	-rm translation_numberTostring firstNotRepeatingChar
-	-rm firstCharacterInStream
+	-rm firstCharacterInStream	reverseSentence	leftRotateString
 	-rm *.o 
 	@echo "cleaning complie"
 .PHONY:	clean
