@@ -10,12 +10,15 @@ INCLUDE	=	-I.
 complexListCopy:	complexListCopy.o complexList.o 
 	$(CC)	$^ -o $@
 
+
 ######### .o 文件的编译 ##########
 complexList.o: complexList.c complexList.h
 	$(CC) $(CFLAGS) -c $(INCLUDE) $< -o $@
 
 complexListCopy.o: complexListCopy.c complexList.h
 	$(CC) $(CFLAGS) -c $(INCLUDE) $< -o $@
+
+
 
 #clean
 clean:	

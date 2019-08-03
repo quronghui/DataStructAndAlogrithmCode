@@ -141,23 +141,25 @@
 
 - [ 面试题55（二）：tree -- 平衡二叉树](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/balance_tree.c)
 
--  [面试题56（一）：数组中只出现一次的两个数字.题目：一个整型数组里除了两个数字之外，其他的数字都出现了两次。](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/13_bit_opreation/findNumsOnce.c)
+-  [面试题56（一）：algorithm位运算 -- 数组中只出现一次的两个数字.其他数字都出现了二次](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/13_bit_opreation/findNumsOnce.c)
 
-- [面试题56（一）：数组中只出现一次的两个数字. 题目：在一个数组中除了一个数字只出现一次之外，其他数字都出现了三次。](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/13_bit_opreation/findAppearOnce.c)
+- [面试题56（二）：algorithm位运算 -- 数组中只出现一次的两个数字. 其他数字都出现了三次。](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/13_bit_opreation/findAppearOnce.c)
 
-- [ 面试题57（一）：和为s的两个数字](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/03_Array/twoNumberWithSum.c)
+- [ 面试题57（一）：array -- 和为s的两个数字](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/03_Array/twoNumberWithSum.c)
 
-- [面试题57（二）：为s的连续正数序列](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/03_Array/continueSeqWithSum.c)
+- [面试题57（二）：array -- 为s的连续正数序列](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/03_Array/continueSeqWithSum.c)
 
-- [面试题58（一）：翻转单词顺序.  题目：输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/reverseSentence.c)
+- [面试题58（一）：string -- 翻转单词顺序(字符串的逆序).  题目：输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/reverseSentence.c)
 
-- [面试题58（二）：左旋转字符串.  题目：字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/leftRotateString.c)
+- [面试题58（二）：string -- 左旋转字符串.  题目：字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/leftRotateString.c)
 
-- [面试题59（一）：滑动窗口的最大值]
+- [面试题59（一）：queue -- 滑动窗口的最大值]
+
+- [面试题60：algorithm递归和循环  --   n个骰子的点数的概率](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/09_recursion_and_loop/dicesProbability.c)
+
+- [面试题61：algorithm递归和循环  --  扑克牌的顺子判断](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/09_recursion_and_loop/continueCard.c)
 
 - 
-
-- ### 
 
   
 

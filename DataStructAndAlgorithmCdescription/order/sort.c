@@ -1,7 +1,8 @@
 /*
 *   sort.c
 *   1)insert_sort每次取后一个元素，和前面已排好序的数组进行比较；
-*   2)binary sort：堆排序。构建一个堆后，进行delete_min，得到排序数组
+*   2)shell sort : 希尔排序：缩小增量排序
+*    3)binary sort：堆排序。构建一个堆后，进行delete_min，得到排序数组
 *   3)merge sort :归并排序，按照中间位置分为两个数字，各自排序后插入到新的数组
 *   4)quick sort  : 快速排序，取中间枢纽元素
 */
@@ -12,21 +13,23 @@
 /* insert_sort   */
 void insertionSort(ElementType a[], int N)
 {
-    int j, p;
     ElementType tmp;
-    for ( p = 1; p < N; p++){
-        tmp = a[p];
-        /* 每次比较的是tmp元素；交换的是a[j]位置，相当于移位覆盖 */
-        for(j = p; j>0 && a[j-1]>tmp; j--)  
-            a[j] = a[j-1]; 
-        a[j] = tmp;                     
+    int j;
+    for ( int i = 1; i < N; i++){
+        tmp = a[i];         // 下一个需要插入的元素
+
+        // 前面已排好序的 ( i-1 ) 个元素;
+        for(int j = i; j>0 && a[j-1]>tmp; j--)  
+            a[ j ] = a[j-1];                                    // 前面的大于 tmp, 则移动覆盖
+        
+        a[ j ] = tmp;                                          // 最后一个位置处理
     }
 }
 
 /* shell sort
 *   1)希尔排序：缩小增量排序
 *   2)元素之间的比较：a[i + h(k)] < a[i - h(k)]，对应元素之间的比较
-*   3)每次删除的逆序对，不止一个；
+*   3)每次删除的逆序对，不止一个逆序对；
 */
 void shell_Sort(ElementType a[], int N)
 {

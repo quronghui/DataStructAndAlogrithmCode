@@ -9,7 +9,8 @@ CFLAGS = -Wall -g
 # all:	maxSum_continueArray
 # all:	uglyNumber
 # all:	twoNumberWithSum
-all:	continueSeqWithSum
+# all:	continueSeqWithSum
+all:	maxMalProfit
 
 # Objs编译
 duplicate_array:	duplicate_array.o
@@ -33,6 +34,10 @@ twoNumberWithSum:	twoNumberWithSum.o
 continueSeqWithSum:	continueSeqWithSum.o 
 	$(CC) $^ -o $@
 
+maxMalProfit:	maxMalProfit.o 
+	$(CC) $^ -o $@
+
+
 ## .o 文件编译
 duplicate_array.o:	duplicate_array.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -55,12 +60,16 @@ twoNumberWithSum.o: twoNumberWithSum.c
 continueSeqWithSum.o: continueSeqWithSum.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+maxMalProfit.o: maxMalProfit.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 # clean
 clean:
 	@echo "cleaning project"
 	-rm duplicate_array duplicate_no_edit_array
 	-rm reorder_OddEven_array maxSum_continueArray
 	-rm	uglyNumber	twoNumberWithSum	continueSeqWithSum
+	-rm maxMalProfit
 	-rm *.o
 	@echo "cleaning complie"
 .PHONY:	clean
