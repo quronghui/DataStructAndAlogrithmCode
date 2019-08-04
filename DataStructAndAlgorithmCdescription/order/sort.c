@@ -2,7 +2,7 @@
 *   sort.c
 *   1)insert_sort每次取后一个元素，和前面已排好序的数组进行比较；
 *   2)shell sort : 希尔排序：缩小增量排序
-*    3)binary sort：堆排序。构建一个堆后，进行delete_min，得到排序数组
+*   3)binary sort：堆排序。构建一个堆后，进行delete_min，得到排序数组
 *   3)merge sort :归并排序，按照中间位置分为两个数字，各自排序后插入到新的数组
 *   4)quick sort  : 快速排序，取中间枢纽元素
 */
