@@ -96,7 +96,10 @@
 
 ### 大疆
 
-+ [题目一: 实现一个循环缓冲区.  ]()
++ [题目一: 实现一个循环缓冲区.  ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/circularReadWrite.c)
++ [题目二: 当一个char类型的变量, 赋值超过其范围的最大值, 此时应该怎么处理呢?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/charConvertint.c)
++ [ 题目三:  结构体和联合体的内存字节对齐计算?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/sizeofStructUnion.c)
++ [ 题目四: 有符号变量（负数）与无符号变量（正数）的相加](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/numberNegAddPos.c)
 
 ### 网易
 
