@@ -1,9 +1,11 @@
 # 编译条件
 CC	=	gcc
 CFLAGS	=	-g -Wall 
-
+LIB	=	-lm
 # Objs
-# all:	string_replace match_string represent_number_string
+# all:	string_replace match_string 
+all:	print_oneToMaxBit_number
+# all:	represent_number_string
 # all:	permutation_ofStrings
 # all:	numberOf_one
 # all:	Atio Itoa
@@ -14,9 +16,10 @@ CFLAGS	=	-g -Wall
 # all:	firstNotRepeatingChar
 # all:	firstCharacterInStream
 # all:	reverseSentence
-all:	leftRotateString
+# all:	leftRotateString
+# all:	hexToBinNumber
 
-# Objs 函数编译
+# *************************************Objs 函数编译**************************
 string_replace:	string_replace.o 
 	$(CC) $^ -o $@
 match_string: match_string.o 
@@ -47,7 +50,13 @@ reverseSentence:	reverseSentence.o
 leftRotateString:	leftRotateString.o 
 	$(CC) $^ -o $@ 
 
-# .o 文件的编译
+hexToBinNumber:	hexToBinNumber.o 
+	$(CC) $^ -o $@ 	$(LIB)
+
+print_oneToMaxBit_number:	print_oneToMaxBit_number.o
+	$(CC) $^ -o $@ 	$(LIB)
+
+#******************************** .o 文件的编译**********************************
 string_replace.o:	string_replace.c 
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -90,6 +99,12 @@ reverseSentence.o: reverseSentence.c
 leftRotateString.o: leftRotateString.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+hexToBinNumber.o: hexToBinNumber.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+print_oneToMaxBit_number.o: print_oneToMaxBit_number.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 #clean
 clean:	
 	@echo "cleaning project"
@@ -98,6 +113,7 @@ clean:
 	-rm numberOf_one digitSequence sortArrayForMinNumber
 	-rm translation_numberTostring firstNotRepeatingChar
 	-rm firstCharacterInStream	reverseSentence	leftRotateString
+	-rm hexToBinNumber print_oneToMaxBit_number
 	-rm *.o 
 	@echo "cleaning complie"
 .PHONY:	clean

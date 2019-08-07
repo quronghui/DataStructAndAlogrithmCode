@@ -24,7 +24,7 @@
 - [面试题3(一): 一维数组, 可以修改数组的情况下 ，找出数组中重复的数字](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/03_Array/duplicate_array.c)
 - [面试题3(二):一维数组 :不可修改数组的情况下，找出数组中重复的数字](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/03_Array/duplicate_no_edit_array.c)
 - [面试题 4： 二维数组中元素的查找，数组中重复的数字](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/04_FindInpartialySortMatrix/find_in_matrix.c)
-- [面试题5：string-- 替换字符串中的空格](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/string_replace.c)
+- [面试题5：string-- **替换**字符串中的空格( 通过特殊字符替换字符串中的 "#", " ")](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/string_replace.c)
 - [面试题6：link -- 从尾到头打印链表](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/print_link_form_tail_to_head.c)
 - [ 面试题 7 ：tree -- 根据前序遍历和中序遍历，构建一颗二叉树 ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/construct_binary_tree.c)
 - [面试题 8：tree-- 找一颗二叉树中序遍历的下一个节点，节点有指向父结点的指针](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/next_binary_tree_node.c)
@@ -35,7 +35,7 @@
 - [面试题14: algorithm动态规划 -- 剪绳子,给你一根长度为n绳子，请把绳子剪成m段](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/12_DynamicProgramming_GreedyAlogithm/Dynamic_maxProduct.c)
 - [面试题15: algorithm位运算 -- 计算一个整数转换为二进制后，1的个数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/13_bit_opreation/one_count.c)
 - [ 面试题 16: 高质量代码 --  不使用库函数，实现pow函数的功能，求base的exponent次方 ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/14_CodeQuality_Integrity/math_funcation_pow.c)
-- [面试题17：高质量代码 --  打印1到最大的n位数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/14_CodeQuality_Integrity/print_oneToMaxBit_number.c)
+- [面试题17：string --  打印1到最大的**n位数**(n==2 打印1-99)](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/print_oneToMaxBit_number.c)
 - [  面试题18（一）：link --在O(1)时间删除链表结点 ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/delete_oneListNode.c)
 - [面试题18（二）：link -- 删除链表中重复的结点](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/delete_repeatNode.c)
 - [面试题19：string -- 正则表达式匹配](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/match_string.c)
@@ -90,7 +90,14 @@
 - [面试题59（一）：queue -- 滑动窗口的最大值]
 - [面试题60：algorithm递归和循环  --   n个骰子的点数的概率](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/09_recursion_and_loop/dicesProbability.c)
 - [面试题61：algorithm递归和循环  --  扑克牌的顺子判断](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/09_recursion_and_loop/continueCard.c)
-- 
+- [面试题62：algorithm递归和循环  --  圆圈中最后剩下的数字](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/09_recursion_and_loop/lastNumberCricle.c)
+- [ 面试题63：array -- 股票的最大利润](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/03_Array/maxMalProfit.c)
+- [面试题64：algorithm递归和循环  --  求1+2+…+n，要求不能使用四则运算](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/09_recursion_and_loop/accumulate.c)
+- [面试题65：algorithm位运算 -- 不用加减乘除做加法](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/13_bit_opreation/addTwoNumber.c)
+- [面试题66:  algorithm位运算 -- 构建乘积数组]
+- [面试题67(一):  String : 代码实现atoi函数的功能, 字符串转换到int类型](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/Atio.c)
+- [面试题67(二): String: 代码实现itoa的功能, Int型整数，转化为字符串](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/Itoa.c)
+- [面试题67(三): String: 写出一个程序，接受一个十六进制的数值字符串，输出该数值的十进制字符串。(满足多组输入)    ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/hexToBinNumber.c)
 
 ## 各公司的笔试题
 
