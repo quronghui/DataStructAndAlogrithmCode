@@ -4,13 +4,13 @@
 // 那么对应的输出是重复的数字2或者3
 
 /*
-*   找出数组中重复的数字
+*   找出数组中重复的数字 : 
 *   1) 题目中提示：n个数，每个数的范围是 0-(n-1)
 *   2) 关键：找下标和对应数组值的关系。
 *   3) 方法：
-        a. 将数组排序，然后遍历一遍便能得出结果，时间效率是O(nlog(n))
-        b. 创建哈希表，需要额外的空间，空间效率O(n)
-        c. 判断条件：下标和值对应相等，不相等则进行交换；需要对原来数组进行改变
+        方法a. 将数组排序，然后遍历一遍便能得出结果，时间效率是O(nlog(n))
+        方法b. 创建哈希表，需要额外的空间，空间效率O(n)
+        方法c. 判断条件：下标和值对应相等, 不相等则进行交换；需要对原来数组进行改变
     4. code：选择最优的方法进行编码
         a. 属于参数的判断，鲁棒性的测试
 */
@@ -42,7 +42,7 @@ bool duplicate(int number[], int length, int *duplication)
             return false;
     }
 
-    /* fucation */
+    /* fucation  : number[j] != j  下标和值相等 */
     for(int j=0; j<length; j++){
         while(number[j] != j){
             /* 判断交换的那个元素是否重复 */
@@ -73,6 +73,7 @@ bool contains(int array[], int length, int number)
     return false;
 }
 
+
 void test(char *name, int number[], int lengthnumber, int expected[], int expectedExpected, bool validArgument)
 {
     printf("%s begin:", name);
@@ -96,6 +97,8 @@ void test(char *name, int number[], int lengthnumber, int expected[], int expect
         printf("FAILED.\n");
 
 }
+
+
 void test1(){
     int number[] = {2, 4, 2, 1, 4}; 
     int duplications[] ={2, 4};

@@ -25,9 +25,10 @@ extern BinaryTreeNode *CreateTree();// 我自己插入了一个二叉树
 //单个节点创建后进行连接，可以不是二叉搜索树
 extern  BinaryTreeNode *CreatTreeNode(double value);
 extern void ConnectTree(BinaryTreeNode *pPatent, BinaryTreeNode *left, BinaryTreeNode *right);
-
  
+ // 二叉树节点的插入和删除;
 extern void insert(TREE_TYPE value);   /* 二叉树的插入，默认不存在重复节点 */
+extern BinaryTreeNode *delete_x(BinaryTreeNode *t, TREE_TYPE x);
 
 extern TREE_TYPE *find(TREE_TYPE value);   /* 查找一个特定的值，插入节点的时候查看无重复，返回值指针 */
 

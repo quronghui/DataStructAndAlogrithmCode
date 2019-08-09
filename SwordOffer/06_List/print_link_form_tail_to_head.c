@@ -4,8 +4,7 @@
 /*
 *   1.题目要求：from tail to head print link
 *   2.ways:
-        a. 栈的方法：
-        b. 栈也是递归
+        a. 栈的方法：栈也是递归
     3. Parament
         *pHead: 链表的地址
 

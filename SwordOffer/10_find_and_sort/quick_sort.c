@@ -19,7 +19,6 @@ static void swap( int *one , int *two)
     *two = temp;
 }
 /***************根据枢纽元素：划分数组为两部分***************/
-// 交换的是地址，而不是值
 int partition(int *data, int length, int start, int end )
 {
     if(data == NULL || length < 0 || start < 0 || end >= length){
@@ -36,7 +35,6 @@ int partition(int *data, int length, int start, int end )
         // 小于中间枢纽的元素进行交互
         if( data[center] < data[end] ){      //比较的还是枢纽元素
             ++ small;
-            // 这个不用加，不希望small出现异常 
             if( small != center )
                 swap(&data[center], &data[small]);
         }

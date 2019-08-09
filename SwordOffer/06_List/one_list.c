@@ -34,7 +34,6 @@ void addToTail(List **pHead, int value)     /* **pHead 指向指针的指针，�
         *pHead = pNew;
     else{
         List *pNode = *pHead;   
-
         while(pNode ->pNext != NULL)
             pNode = pNode->pNext;
         pNode->pNext = pNew;

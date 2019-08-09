@@ -6,10 +6,12 @@
 
 /*
 *   1.题目中的提示：n+1个数，数的范围1-n (和前面的题目类似)
-×   2.题目中要求：不修改数组
+*   2.题目中要求：不修改数组
 *   3.方法：
         a. 允许使用额外空间：创建一个数组O(n)将原来数组中的元素m,复制到下标为m的位置
-        b. 不允许额外空间：二分查找法，将数组从中间数字m分开，查找1-m，m - n 元素的个数；
+        b. 不允许额外空间：二分查找法(递归)，通过数字m将数组分成两部分，遍历得到(1-m)元素的个数，和(m - (length-1) )元素的个数；
+            时间: O(nlogn), 空间O(1)
+    
 */
 
 #include <stdio.h>
@@ -48,7 +50,8 @@ int getDuplicate(const int *numbers, int length)
                 printf("dupllicate is %d \n", start);
                 return start;   /* 返回重复的元素 */
             }  
-            else    break;
+            else    
+                break;
         }
         if(count > (middle - start + 1))
             end = middle;

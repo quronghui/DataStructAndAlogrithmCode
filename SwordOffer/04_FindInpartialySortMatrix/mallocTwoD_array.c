@@ -36,7 +36,7 @@ void TwoPointMalloc( int rows, int cols)
         for(int col=0; col < cols; col++){
             printf("%p\t", &numbers[row][col]); //printf函数族中对于%p一般以十六进制整数方式输出指针的值，附加前缀0x
         }
-        putchar('\n');
+        putchar('\n'); 
     }
 
     // 释放二维数组, 双指针创建，只需要释放行头指针

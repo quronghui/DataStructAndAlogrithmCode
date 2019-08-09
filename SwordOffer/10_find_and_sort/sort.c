@@ -10,6 +10,21 @@
 #include <stdlib.h>
 #include "sort.h"
 
+/* 冒泡排序 */
+void	BubbleSort(int *array, int length)
+{
+	for(int i = 0; i < length - 1; i++){
+        // 注意j是从后往前的
+        for(int j = length - 1; j >= i; j--){
+            if( array[j] > array[j+1] ){     /*前者大于后者*/
+                int tmp = array[j];
+                array[j]    =   array[j+1];
+                array[j+1]  =   tmp;                
+            }
+        }
+    }
+}
+
 /* insert_sort   */
 void insertionSort(ElementType a[], int N)
 {

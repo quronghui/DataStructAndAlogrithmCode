@@ -1,16 +1,13 @@
-# specify all source files here
-# SRCS	=	double_list.c 	print_link_form_tail_to_head.c 	one_list.c	callback_use.c	\
-# 					delete_oneListNode.c	delete_repeatNode.c  FindKth_ToTail.c 	EnterNode_LoopList.c 	\
-# 					reverseList.c	reverseList_FromTailH.c	merge_orderList.c 	firstCommonNode_inList.c	numberOfK_InSortArray.c \
+# 由于我的目标文件是单独的, 所以我每次得 编辑 SRCS 和 TARG
 
-SRCS	=	double_list.c				
+# specify all source files here
+# SRCS	=	one_list.c 	one_list.h
+SRCS	=	print_link_form_tail_to_head.c 	one_list.c one_list.h
+
 
 # specify target here (name of executable)
-# TARG	=	double_list		print_link_form_tail_to_head 	callback	delete_oneListNode	\
-# 					delete_repeatNode		FIndKth_ToTail		EnterNode_LoopList		reverseList		\
-# 					reverseList_FromTailH		merge_orderList		firstCommonNode_inList		numberOfK_InSortArray
-
-TARG	=	double_list 
+# TARG	=	one_list		
+TARG	=	print_link_form_tail_to_head 
 
 # specify compiler, compile flags, and needed libs
 CC	=	gcc
@@ -31,11 +28,10 @@ $(TARG):	$(OBJS)
 %.o:	%.c 
 	$(CC)	$(CFLAGS)	-c 	$<	$@
 
+# print_link_form_tail_to_head 	callback	delete_oneListNode	\
+# 					delete_repeatNode		FIndKth_ToTail		EnterNode_LoopList		reverseList		\
+# 					reverseList_FromTailH		merge_orderList		firstCommonNode_inList		numberOfK_InSortArray
 # ################## 目标函数的编译################### 
-
-# # one_list:	one_list.o
-# # 	$(CC) $^ -o $@
-
 # double_list:	double_list.o 
 # 	$(CC) $^ -o $@
 
@@ -122,6 +118,6 @@ clean:
 	# -rm FIndKth_ToTail EnterNode_LoopList
 	# -rm reverseList reverseList_FromTailH
 	# -rm merge_orderList firstCommonNode_inList
-	-rm *.o 	$(OBJS)	$(TARG)
+	-rm *.o  $(TARG)
 	@echo "cleaning complie"
 .PHONY:	clean

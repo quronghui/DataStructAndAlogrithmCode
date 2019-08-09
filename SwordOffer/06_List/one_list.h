@@ -14,7 +14,7 @@ extern void addToSomewhere(List **pHead, int value);  // 排序添加
 
 //方法二 当传递的参数是指针节点时，需要创建指针节点的关系
 extern List *CreatNode(int value);                      // 创建节点
-extern void addTo_withNode(List **pHead, List *pNew);   // 对链表进行排序
+extern void addTo_withNode(List **pHead, List *pNew);   // 对节点进行排序链接
 extern void ConnectListNodes(List *pNode1, List *pNode2); //每次单独连接两个节点之间的连接关系：
 
 // 删除链表 或者 节点

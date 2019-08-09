@@ -47,6 +47,43 @@ void insert(TREE_TYPE value)
     *link = current;                        /* *link 表示tree树中的某一个位置 */
 }
 
+/***********************delete node************************/
+/* delet_x : */
+BinaryTreeNode *delete_x(BinaryTreeNode *t, TREE_TYPE x)
+{
+    BinaryTreeNode *tmpcell;
+
+    if(t == NULL)
+        printf("element not found");
+
+    /* 遍历元素的过程 */
+    else if(x < t->mValue)
+        t->pLeft = delete_x(x, t->pLeft);
+    else if(x > t->pRight)
+        t->pRight = delete_x(x, t->pRight);
+     
+    /* 找到元素节点：判断其含有几个child */
+    /* x == t->element */
+    else if(t->pRight && t->pRight)    /* 有两个孩子节点：用最小的节点代替这个位置*/
+    {
+        tmpcell = find_min(t->pRight);
+        t->mValue = tmpcell->mValue;
+        t->pRight = delete_x(t->mValue, t->pRight);  /*要对删除后的元素建立连接关系 */
+    }   
+    else    /* 被删除的元素只有一个child */
+    {       /* 连同子节点的位置一起删除 */
+        tmpcell = t;
+        if(t->pLeft == NULL)
+            t = t->pLeft;    /*  */
+        else if(t->pRight == NULL)
+            t = t->pRight;
+        free(tmpcell);
+    }
+
+    return t;
+}
+
+
 /********************find node**********************/
 //查找一个特定的值，插入节点的时候查看无重复，返回值应该可以任意
 TREE_TYPE *find(TREE_TYPE value)

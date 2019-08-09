@@ -12,7 +12,7 @@
             b1. pNode是它父节点的 左子节点： 下一个节点是它的父节点
             b2. pNode是它父节点的 右子节点： 先找到一个是 它 父节点的左子节点的节点；
                 如果存在，那么这个节点的父节点便是下一个节点
-            b3. 注意b1.b2最后的情况都是父节点的情况
+            b3. 注意b1.b2最后的情况都是关于父节点的情况
     3.GetNext_Parameter
         pNode: 树中的节点
     4.辅助函数
@@ -65,7 +65,7 @@ BinaryTreeNode *GetNext(BinaryTreeNode *pNode)
     return pNext;
 }
 
-/********************创建二叉树**********************/
+/********************创建二叉树的单节点**********************/
 BinaryTreeNode *CreateBinaryTreeNode(int value)
 {
     BinaryTreeNode *pNode = malloc(sizeof(struct next_binary_tree_node));
@@ -128,6 +128,7 @@ void PrintTree(BinaryTreeNode *pRoot)
 }
 
 /*******************删除二叉树********************/
+// 二叉树的释放, 先释放根节点, 在释放左右子树
 void DestoryTree(BinaryTreeNode *pRoot)
 {
     if(pRoot != NULL){

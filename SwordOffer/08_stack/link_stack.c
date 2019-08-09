@@ -54,7 +54,7 @@ void push(StackNode *stack, STACK_TYPE value)
     newNode->mValue = value;
 
     newNode->pNext = stack->pNext;
-    stack->pNext = newNode;         // 保留栈顶指针，链表是没有头指针  
+    stack->pNext = newNode;         // 保留栈顶指针，
 }
 
 void pop(StackNode *stack)
