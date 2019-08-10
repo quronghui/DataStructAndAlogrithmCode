@@ -40,7 +40,7 @@ void DeleteNode( List **pListHead, List *pToBeDeleted )
 
         *pListHead = NULL;      // 将头指针置为空
     }
-    else{                                       // 链表中有多个结点，删除尾结点
+    else{                                       // 链表中有多个结点，删除的位置是尾结点
         List *pNode = *pListHead;
         while( pNode->pNext != pToBeDeleted ){
             pNode = pNode->pNext;

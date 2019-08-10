@@ -23,7 +23,7 @@
 #include "reverseList.h"
 
 
-/****************从头开始反转链表*******************/
+/****************题目一: 从头开始反转链表*******************/
 List *reverseList(List *pHead)
 {
     if(pHead == NULL){      // 异常情况一：链表为空欧
@@ -34,15 +34,15 @@ List *reverseList(List *pHead)
     List *pPrevious = NULL;     
     List *pNode     = pHead;
     List *pNext     = NULL;
-    List *pPreHead  = NULL;
+    List *pRevHead  = NULL;
     // 建立三指针之间的关系
     while( pNode != NULL ){         // 判断条件：链表中循环的判断条件 pHead != NULL 
         // pnext 保证链表不会断开
         pNext = pNode->pNext;
-        // 异常情况二：链表只有一个节点
+        // 设置反转链表的头结点
         if(pNext == NULL){
             puts("List just have one node.");
-            pPreHead = pNode;
+            pRevHead = pNode;
         }
         // 链表的反转
         pNode->pNext = pPrevious;
@@ -50,7 +50,7 @@ List *reverseList(List *pHead)
         pPrevious = pNode;
         pNode = pNext; 
     }
-    return pPreHead;
+    return pRevHead;
 }
 
 /**************************题目二************************************/

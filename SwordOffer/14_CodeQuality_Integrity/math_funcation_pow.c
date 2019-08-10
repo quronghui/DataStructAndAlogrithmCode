@@ -36,7 +36,7 @@ double Pow(double base, double exponent)
 
     unsigned int absExponent = (unsigned int) exponent; // 类型强制转换为，无符号整形
     if(exponent < 0)
-        absExponent = (unsigned int)(-exponent);        // exponent 为绝对值
+        absExponent = (unsigned int)(-exponent);        // 取exponent 为绝对值
     
     double result = PowerWithUnsignedExponent(base, absExponent);  // 功能函数
     if( exponent < 0)

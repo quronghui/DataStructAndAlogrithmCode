@@ -47,7 +47,7 @@ bool matchCore(char *str, char *pattern)
         if( *pattern == *str || (*pattern == '.' && *str != '\0')) {  // 第一个字符相等了
             return matchCore(str+1, pattern+2)  // * 代表前面字符出现一次；比较下一个字符；
                 || matchCore(str+1, pattern)    // 查看str+1 下一个字符：是否是重叠的；
-                || matchCore(str, pattern+2);   // 忽略 pattern 的前两个字符；比较低三个字符；
+                || matchCore(str, pattern+2);   // 忽略 pattern 的前两个字符；比较第三个字符；
         }
         else 
             return matchCore(str, pattern+2);   // 忽略 *

@@ -1,10 +1,10 @@
-/*
+/* 
 *   sort.c
 *   1)insert_sort每次取后一个元素，和前面已排好序的数组进行比较；
 *   2)shell sort : 希尔排序：缩小增量排序
 *   3)binary sort：堆排序。构建一个堆后，进行delete_min，得到排序数组
-*   3)merge sort :归并排序，按照中间位置分为两个数字，各自排序后插入到新的数组
-*   4)quick sort  : 快速排序，取中间枢纽元素
+*   4)merge sort :归并排序，按照中间位置分为两个数字，各自排序后插入到新的数组
+*   5) 冒泡排序
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -66,12 +66,12 @@ void shell_Sort(ElementType a[], int N)
         }
 }
 
-/*)2）binary sort
+/*)2）binary sort : 类似于一颗二叉树
 *   1)现实中构建的堆：和二叉堆的性质相反之处 -- （任一节点的关键字大于其儿子节点的关键字）
 *   2)delete_min：得到从小到大的排序数组
-*   3)0位置包含元素的
+*   3)注意:  0位置包含元素的
 */
-#define leftchild(i) (2*(i) + 1)
+#define leftchild(i) (2*(i) + 1)        // 根据层数判断树中节点的个数
 
 void PercDown(ElementType a[], int i, int N)
 {
@@ -97,7 +97,7 @@ void swap(int *i, int *j)
     i = j;
     j = k;
 }
-
+// 堆排序的调用函数
 void heapsort(ElementType a[], int N)
 {
     int i;
@@ -111,16 +111,32 @@ void heapsort(ElementType a[], int N)
 
 /* 
 *   3）merge sort
-*       1)按照中间位置：将数组不停的分为两部分；
+*       1)  按照中间位置：将数组不停的分为两部分；
 *       2）在两部分中进行排序；
 *       3）最后用新的数组进行插入归并排序
 */
-/* Msort 驱动程序：调用程序 */
-void merge(ElementType a[], ElementType tmparray[], int left, int center, int right )
+
+/* merge 合并函数 */
+void merge(int a[], int tmparray[], int left, int center, int right )
 {
-    
+    int j, k, l;
+    for( k = left, j = center + 1; (left <= center) && (j<=right); k++){
+        if( a[left] < a[j] )
+            tmparray[k] =   a[left++];
+        else 
+            tmparray[k] =   a[j++];
+    }
+    if(left <= center){
+        for(int l=0; l <= center -left; l++)
+            tmparray[k+1] = a[left+1];          /* 将剩余的复制到新数组中 */
+    }
+    if(j <= right){
+        for(l=  0; l <= right-j; l++)
+            tmparray[k+1] = a[j+1];
+    }
 }
-void Msort(ElementType a[], ElementType tmparray[], int left, int right)
+// 对数组进行分别排序, 然后在进行合并
+void Msort(int a[], int tmparray[], int left, int right)
 {
     int center;
     if(left < right){
@@ -131,11 +147,11 @@ void Msort(ElementType a[], ElementType tmparray[], int left, int right)
     }
 }
 /* merge sort  */
-void mergesort(ElementType a[], int N)
+void mergesort(int a[], int N)
 {
-    ElementType *tmparray;
+    int *tmparray;  // 用于存储的数组;
 
-    tmparray = malloc(N * sizeof(ElementType));
+    tmparray = malloc(N * sizeof(int));
     if(tmparray != NULL){
         Msort(a, tmparray, 0, N-1);
         free(tmparray);
@@ -144,54 +160,3 @@ void mergesort(ElementType a[], int N)
         printf("no space for tmp array!!!");
 }
 
-/* quick sort
-    1) quick_sort：启动快速排序的驱动程序；
-    2） Qsort：快速排序的实现；
-    3） median3;三数中值分割法
-*/
-void quick_sort(ElementType a[], int N)
-{
-    Qsort( a, 0, N-1 ); /* 数组a, 下标 0-(n-1) */
-}
-/* 三数中值分割法*/
-ElementType median3(ElementType a[], int left, int right) /*三数中值分割*/
-{
-    int center = (left + right)/2;
-    /* 将大的元素放在右边 */
-    if(a[left] > a[center])
-        swap(&a[left], &a[center]);
-    if(a[left] > a[right])
-        swap(&a[left], &a[right]);
-    if(a[center] > a[right])
-        swap(&a[center], &a[right]);
-    /* incariant a[left]<= a[center] <= a[right] */
-    swap(&a[center], &a[center -1]);    /* 将枢纽元放在最后一个位置 */
-    return a[right - 1] ;      
-}
-/*quick sort*/
-#define cutoff (3)
-void Qsort(ElementType a[], int left, int right)
-{
-    int i, j;
-    ElementType pivot;  /*枢纽元*/
-
-    if(left + cutoff <= right){
-        pivot = median3(a, left, right);
-        i = left; j = right - 1;
-        for(;;){
-            while(a[++i] < pivot) {}
-            while(a[--j] > pivot) {}
-            if(i < j)
-                swap(&a[i], &a[j]);
-            else 
-                break;
-        }
-        swap(&a[i], &a[j-1]);   /* restore pivot */
-
-        /* 分成两部分后，递归调用快排 */
-        Qsort(a, left, i-1);
-        Qsort(a, i+1, right);
-    }
-    else 
-        insertionSort(a+left, right-left+1);    /* 当元素很小的时候，用插入排序 */
-}

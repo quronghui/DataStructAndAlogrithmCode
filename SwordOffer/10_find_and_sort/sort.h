@@ -8,6 +8,8 @@ struct InsertSort;
 typedef int ElementType;
 ElementType Element;
 
+/* 冒泡排序 */
+void	BubbleSort(int *array, int length);
 /* insert order */
 void insertionSort(ElementType a[], int N);
 /* shell sort */
@@ -17,10 +19,6 @@ void heapsort(ElementType a[], int N);
 /* merge sort */
 void Msort(ElementType a[], ElementType tmparray[], int left, int right);
 void mergesort(ElementType a[], int N);
-/* quick sort */
-void quick_sort(ElementType a[], int N);
-ElementType median3(ElementType a[], int left, int right);  /*三数中值分割*/
-void Qsort(ElementType a[], int left, int right);
 
 #endif
 

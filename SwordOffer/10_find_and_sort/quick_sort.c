@@ -18,6 +18,7 @@ static void swap( int *one , int *two)
     *one = *two;
     *two = temp;
 }
+
 /***************根据枢纽元素：划分数组为两部分***************/
 int partition(int *data, int length, int start, int end )
 {
