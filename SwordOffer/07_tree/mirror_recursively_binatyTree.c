@@ -1,7 +1,7 @@
 // 面试题27：二叉树的镜像
 // 题目：请完成一个函数，输入一个二叉树，该函数输出它的镜像。
 /*
-*   1.解题思路：
+*   1.解题思路：从上倒下依次递归
         a.镜像的概念：从根节点开始，根节点含有左 or 右子树；交换左右子树；
         b.判断条件：root->pLeft != NULL || root->pRight != NULL;
 */
@@ -17,7 +17,7 @@ void MirrorRecursively(BinaryTreeNode *pRoot)
         printf("The binaryTree is null.\n");
         return ;
     }
-    // 满足可镜像交换的条件
+    // 不满足镜像的条件
     if(pRoot->pLeft == NULL && pRoot->pRight == NULL){
         // printf("The binaryTree leftTree and ringhtTree are null.\n");
         return ;

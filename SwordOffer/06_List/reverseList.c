@@ -73,7 +73,7 @@ List *reverseList_optimizem(List *pHead, unsigned int k, unsigned int m)
     unsigned int count = 1  ;          //定义计数
     // 找出循环区间，并对异常进行处理
     while(pNode != NULL && count!=m){
-        // 先遍历，找出k节点的指针
+        // 先遍历，找出k位置的节点
         for(count = 1; count < k; count++)
         {
             // 判断指针的下一个节点是否为空

@@ -1,18 +1,17 @@
 // 面试题26：树的子结构
 // 题目：输入两棵二叉树A和B，判断B是不是A的子结构。
 /*
-*   1.解题思路 :
+*   1.解题思路 : 从上到下递归判断
     root的判断:使用bool指针
         a. 先判断 ATree-root and BTree-root 是否相等；
             1)不相等： ATree-left, or ATree-ringht 是否相等;
-           遍历 2)直到找到一个root相等； 
+           2) 遍历 : 直到找到一个root相等； 
     ******在root不相同，且左右子树不同的时候，继续遍历树 A*******
     左右子树的判断：
         b. 在判断ATree-left and BTree-left 是否相等
         c. 在判断ATree-right and BTree-ringht 是否相等
     2.异常情况；
-        a. 没有说是不是二叉搜索树，说了的话，还更好判断，不需要遍历； 
-            二叉搜索树：不允许重复节点
+        a. 没有说是不是二叉搜索树，二叉搜索树没有重复节点, 还更好判断，不需要遍历； 
         b.  树的值类型
 
 */
@@ -40,7 +39,7 @@ bool SubTreeRoot(TreeNode *ARoot, TreeNode *BRoot)
     // 这里只判断一次：当时谢了一个while循环，一直在报错；
 
     if( ARoot !=NULL && BRoot != NULL ){ 
-        if(Equal(ARoot->m_Value, BRoot->m_Value))   // root相等，查看子书节点；
+        if(Equal(ARoot->m_Value, BRoot->m_Value))   // root相等，查看子树节点；
             result = TreeLeftRight(ARoot, BRoot);
         // 在root不相同，且左右子树不同的时候，继续遍历树 A
         if(!result)
@@ -54,12 +53,13 @@ bool SubTreeRoot(TreeNode *ARoot, TreeNode *BRoot)
 /****************在root相同的情况下：判断A/B树的左右子树是否相同*******************/
 bool TreeLeftRight(TreeNode *ARoot, TreeNode *BRoot)
 {   
+    // 边界条件
     if(BRoot == NULL)   // 先检查B树
         return true;    // 当B树的左右子书为空时，只有根节点有值；
     if(ARoot == NULL)
         return false;   // 当B树的左右子书不为空时，A树左右子树为空
 
-    // 在判断一次值root是否相等
+    // 每次递归调用时, 要判断节点的值是否相等;
     if( !Equal(ARoot->m_Value, BRoot->m_Value))
         return false;
     // 判断左右子树的结构是否相同

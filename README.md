@@ -47,9 +47,9 @@
 - [面试题24：link-- 反转链表(从第k-m个位置进行反转)](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/reverseList.c)
 - [面试题24(二)：link--  从倒数第k个节点反转链表](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/reverseList_FromTailH.c)
 - [面试题25：link-- 合并两个排序的链表 (递归)](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/merge_orderList.c)
-- [ 面试题26：tree -- 树的子结构](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/Substructure_inTree.c)
-- [面试题27：tree --  二叉树的镜像  ]( https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/mirror_recursively_binatyTree.c)
-- [面试题28：tree --  对称的二叉树](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/is_Symmetrical.c)
+- [ 面试题26：tree -- 树的子结构 (从上到下: 递归判断节点的值)](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/Substructure_inTree.c)
+- [面试题27：tree --  二叉树的镜像 (从上到下: 递归交换) ]( https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/mirror_recursively_binatyTree.c)
+- [面试题28：tree --  对称的二叉树 (将这棵树当做两棵树)](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/is_Symmetrical.c)
 - [面试题29：array: 顺时针打印矩阵](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/04_FindInpartialySortMatrix/PrintMatrixClockwisely.c)
 - [面试题30:   stack -- 包含min函数的栈](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/08_stack/min_inStack.c)
 - [面试题31：stack -- 栈的压入、弹出序列.](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/08_stack/is_stackPopOrder.c)
@@ -108,6 +108,7 @@
 + [algorithm -- 快速排序](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/quick_sort.c)
 + [algorithm -- 其他排序](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/sort.c)
 + [algorithm -- 二分查找](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/binary_search.c)
++ [ 高质量代码 --  判断两个double类型的值是否相等]((https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/14_CodeQuality_Integrity/equal_judge.c))
 
 ## 各公司的笔试题
 
