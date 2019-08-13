@@ -4,6 +4,7 @@
 *   1.解题思路：
         a. 和面试题31是一样的思路；
         b. 在打印换行的时候，需要知道每一层有多少个节点，需要两个变量进行表示；
+        c. nextLevel变量: 统计下一层的节点数量; printNumber变量: 每打印一个节点, 该变量值就减一;
 */
 #include "tree_interface.h"
 #include "link_queue_interface.h"
@@ -27,7 +28,7 @@ void printTree(BinaryTreeNode *pTreeRoot)
     enQueue(queue, pHead);  
     
     // 表示每一层多少个节点
-    int nextLevel = 0;
+    int nextLevel = 0;             // 统计下一层的节点数;
     int printNumber = 1;    // 根节点不为空，算一个
 
     // 当队列不为空的时候，一直循环( return queue->front->pNext->mValue;)

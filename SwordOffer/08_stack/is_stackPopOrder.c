@@ -18,44 +18,41 @@
 #include <stdbool.h>
 
 /****************判断函数实现：*******************/
-// 循环的条件；入栈的条件；出栈的条件；弹出序列是否全部判断玩的条件
+// 循环的条件；入栈的条件；出栈的条件；弹出序列是否的条件
 bool isPopOrder(const int *pPush, const int *pPop, int length)
 {
     bool possible = false;  // 设置全局遍历处理返回结果；
 
     // 边界条件
-    if(pPush == NULL && pPop == NULL && length > 0){
-        puts("The array order is null or parameter invailed\n");
-        return possible;
-    }
-    // 创建一个辅助栈空间
-    StackNode *stack = link_create_stack();
+    if(pPush != NULL && pPop != NULL && length > 0){
+        // 创建一个辅助栈空间
+        StackNode *stack = link_create_stack();
 
-    // 创建两个指针，指向不可改变的数组
-    const int *pNextPush = pPush;   // 数组序列的首地址,判断是否全部判断玩
-    const int *pNextPop  = pPop;    
+        // 创建两个指针，指向不可改变的数组
+        const int *pNextPush = pPush;   // 数组序列的首地址,判断是否全部判断玩
+        const int *pNextPop  = pPop;    
 
-    // 循环的条件：进行判断pPop序列中的每一个值
-    while(pNextPop - pPop < length){    // 判断的值在数组范围以内
-        // 入栈的条件：进行入栈操作
-        while(is_empty(stack) || top(stack) != *pNextPop){
-            // 判断入栈序列是否为全部进行入栈
-            if(pNextPush - pPush == length)
-                break;  
-            push(stack, *pNextPush);
-            pNextPush++;
+        // 循环的条件：进行判断pPop序列中的每一个值
+        while(pNextPop - pPop < length){    // 判断的值在数组范围以内
+            // 入栈的条件：进行入栈操作
+            while(is_empty(stack) || top(stack) != *pNextPop){
+                // 判断入栈序列是否为全部进行入栈
+                if(pNextPush - pPush == length)
+                    break;  
+                push(stack, *pNextPush);
+                pNextPush++;
+            }
+            // 出栈的条件：如果栈顶元素和pPop序列不一样，则跳出循环
+            if(top(stack) != *pNextPop)
+                break;
+            // 否则将相同元素出栈, 并进行下一个元素判断
+            pop(stack);
+            pNextPop++;   
         }
-        // 出栈的条件：如果栈顶元素和pPop序列不一样，则跳出循环
-        if(top(stack) != *pNextPop)
-            break;
-        // 否则进行出栈并进行判断
-        pop(stack);
-        pNextPop++;     // 进行下一个元素的判断
-    }
-    // 弹出序列是否全部判断玩的条件
-    if( is_empty(stack) && pNextPop-pPop == length)
-        possible = true;
-    
+        // 弹出序列是否全部判断的条件
+        if( is_empty(stack) && pNextPop-pPop == length)
+            possible = true;
+    }    
     return possible;
 }
 

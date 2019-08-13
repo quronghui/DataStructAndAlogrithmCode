@@ -3,11 +3,11 @@
         // 考察边界条件的判断：全部梳理出来之后；就是顺序书写代码；
 // 题目扩展：逆时针打印呢？
 /* 
-*   1.通过画图的方式：将问题形象化
-        a.圈循环能 --> 进行的条件：(cols > startX*2) && (rows > startY*2); 
+*   1.通过画图的方式：将问题形象化, 行和列的边界判断
+        a.圈能进行循环的条件：(cols > startX*2) && (rows > startY*2); 
         b.每个圈的第一个节点的位置：（0,0），（1,1）... (start,start)
-        c.完成一个圈要经过四步； 
-            第一步：从左到右打印第一行，只要二维数组不为空，就必须；
+        c.完成一个圈要经过四步；  
+            第一步：从左到右打印第一行，只要二维数组不为空，就可以打印一行；
             第二步：从上到下打印 一列---row_end > row_start;
             第三步：从右到左打印 一行---至少两行两列 ；(row_end > row_start)&&(col_end > col_start)
             第四步：从下到上打印 一列---至少三行两列；(row_end > row_start*2)&&(col_end > col_start)
@@ -37,7 +37,7 @@ void MatrixClockwisely(int **numbers, int rows, int cols)
         // PrintMatrixCricle(numbers, rows, cols, start);
         // putchar('\n');  // 循环一个圈，打一个回车
         
-        // 调用逆时针打印函数
+        // 调用逆时针打印函数, 一个圈一个圈的打印
         ReverPrintMatrixCricle(numbers, rows, cols, start);
 
         putchar('\n');  // 循环一个圈，打一个回车
@@ -51,8 +51,9 @@ void PrintMatrixCricle(int **numbers, int rows, int cols, int start)
 {   
     // startX = startY = start;
     int endX = cols-1 - start;    // X方向打印终止的条件取决与 cols数目；
-                                    // 每打印一圈：丢弃外圈的行数和列数；
     int endY = rows-1 - start; 
+
+     // 每打印一行/列：丢弃外圈的行数和列数；
     // 第一步：从左到右打印第一行，只要二维数组不为空，就必须；
     for(int startX = start; startX <= endX; startX++){
         int number = numbers[start][startX];
@@ -66,7 +67,7 @@ void PrintMatrixCricle(int **numbers, int rows, int cols, int start)
         }
     }
     // 第三步：从右到左打印 一行---至少两行两列 ；(row_end > row_start)&&(col_end > col_start)
-    if( start < endX && start < endY){
+    if(start < endY && start < endX ){
         for(int startX = endX-1; startX >= start; startX--){
             int number = numbers[endY][startX];
             printf(" %d ", number);        
@@ -88,8 +89,9 @@ void ReverPrintMatrixCricle(int **numbers, int rows, int cols, int start)
 {
     // 其实打印 startX = startY= start
     int endX = cols-1 - start;    // X方向打印终止的条件取决与 cols数目；
-                                    // 每打印一圈：丢弃外圈的行数和列数；
     int endY = rows-1 - start; 
+
+    // 每打印一圈：丢弃外圈的行数和列数；   
     // 第一步：从上到下打印第一列，只要二维数组不为空，就必须；
     for(int startY = start; startY <= endY; startY++){
         int number = numbers[startY][start];

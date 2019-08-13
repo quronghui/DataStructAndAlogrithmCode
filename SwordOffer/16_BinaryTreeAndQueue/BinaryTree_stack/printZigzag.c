@@ -28,8 +28,8 @@ void printZigzag(BinaryTreeNode *pRoot)
     StackNode *stack2 = link_create_stack();
     StackNode *level[] = { stack1, stack2 };
     
-    // 标志打印的层数，表示每一层多少个节点
-    int current = 0;    // 表明第几个栈
+    // 标志奇偶层数
+    int current = 0;    
     int next = 1;    
     
     //根节点进行入栈

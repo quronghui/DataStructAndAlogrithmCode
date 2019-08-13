@@ -28,7 +28,7 @@
 // };
 
 /* 链式栈结构体的创建 */
-typedef struct link_stack StackNode;
+typedef strucStackNode;
 struct link_stack
 {
     STACK_TYPE mValue;

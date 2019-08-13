@@ -4,8 +4,8 @@
 /*
 *   1.解题思路
         a. 路径：起始于根节点，结束于叶子节点；
-        b. 前序遍历：需要将路径中的节点进行入栈，作为路劲的保存
-        c. 节点遍历后，需要回溯到上一个节点；
+        b. 前序遍历：需要将路径中的节点进行入栈，作为路径保存
+        c. 便于节点遍历后，回溯到上一个节点；
     2.注意的是：
         压入栈后的节点：如何顺序打印路径；
         方法：通过双栈模拟队列，实现栈的打印；
@@ -19,6 +19,7 @@
 // 函数声明
 void findTreepath(BinaryTreeNode *pRoot, int expectedSum, StackNode *path, int currentSum);
 bool is_leaf(BinaryTreeNode *pNode);
+
 /*****************用户接口函数********************/
 void findPath(BinaryTreeNode *pRoot, int expectedSum)
 {

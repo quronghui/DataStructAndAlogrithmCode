@@ -3,10 +3,10 @@ CC	=	gcc
 CFLAGS	=	-g -Wall
 
 #Objs
-all:	 link_stack 
+# all:	 link_stack 
 # all:	array_malloc_stack
 # all:	min_inStack 
-# all:	is_stackPopOrder
+all:	is_stackPopOrder
 
 ######### objs 文件编译############
 # 需要单独测试 栈的数据结构的时候，在编写

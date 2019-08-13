@@ -3,10 +3,10 @@
 /*
 *   1.解题思路：
         a. 建立一个队列进行存储；
-        b. 打印根节点时，顺序入队两个左右子节点；
+        b. 打印根节点时，顺序入队其左右两个子节点；
     2.遇到的问题
-        a. 入队的节点是树的节点：这个可以通过改变Queue接口中的QUEUE_TYPE, 修改成BinaryTreeNode * 这样解决；
-        b. 但是入队后，队列执行一次后就判断为空: 我一开始写的queue.c有问题，queue->rear没有处理好；
+        a. 入队的节点是树的节点, 而不是节点的值：需要修改QueueAPI中的QUEUE_TYPE, 修改成BinaryTreeNode * ；
+        b. 入队和出队交叉一次后，队列就判断为空: 我一开始写的link_queue.c有问题，queue->rear没有处理好；
 */
 #include "tree_interface.h"
 #include "link_queue_interface.h"
@@ -24,9 +24,9 @@ void printTree(BinaryTreeNode *pTreeRoot)
     }
     // 创建一个链式队列
     QueueNode *queue = create_queue();
-
-    BinaryTreeNode *pHead = pTreeRoot;
+    
     // 先入队根节点，将根节点的地址入队,修改Queue的接口，这样才可行
+    BinaryTreeNode *pHead = pTreeRoot;
     enQueue(queue, pHead);  
 
     // 当队列不为空的时候，一直循环( return queue->front->pNext->mValue;)
