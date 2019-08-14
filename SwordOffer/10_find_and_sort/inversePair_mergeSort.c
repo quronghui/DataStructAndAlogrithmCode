@@ -20,9 +20,9 @@ int inversePair( int *data, int length )
 {
     if( data == NULL || length <= 0 )
         return 0;
+        
     // 归并排序: 需要一个数组空间保存新的元素;
     // 为了不改变原来的数组, 我们创建一个新的数组空间指向原来的
-    
     int *copy = malloc( sizeof(int)  * length );
     for (int i = 0; i < length; i++){
         copy[i] = data[i];

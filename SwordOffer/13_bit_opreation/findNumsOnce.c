@@ -83,12 +83,14 @@ void Test(const char* testName, int data[], int length, int expected1, int expec
     else
         printf("Failed.\n\n");
 }
+
 // 有两个以上的元素
 // void Test1()
 // {
 //     int data[] = { 2, 4, 3, 6, 3, 2, 5, 5 };
 //     Test("Test1", data, sizeof(data) / sizeof(int), 4, 6);
 // }
+
 // 只包含两个元素
 void Test2()
 {
