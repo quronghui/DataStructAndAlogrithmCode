@@ -4,11 +4,11 @@ CFLAGS	=	-g -Wall
 LIB	=	-lm
 # Objs
 # all:	string_replace match_string 
-all:	print_oneToMaxBit_number
+# all:	print_oneToMaxBit_number
 # all:	represent_number_string
 # all:	permutation_ofStrings
 # all:	numberOf_one
-# all:	Atio Itoa
+all:	Atio Itoa
 # all:	numberOf_one
 # all:	digitSequence
 # all:	sortArrayForMinNumber

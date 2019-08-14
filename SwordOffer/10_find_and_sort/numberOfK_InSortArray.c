@@ -7,7 +7,10 @@
         b. 查找得到第一个K: 拿数组中间的数字和K作比较; ( 三种情况 )
         c. 查找得到最后一个K: 如何确定这个k就是最后一个? 
         d. K的个数就可以通过last - first + 1
- */
+    2. 注意:
+        二分查找的使用: 数组的值和下标是具有一定关系的;
+        需要使用递归: 数组的值和下标不是唯一的时候;
+  */
 #include <stdio.h>
 
 // 函数声明
@@ -51,7 +54,7 @@ int getFirstK( int *array, int length, int k, int start , int end )
     else 
         start = middleIndex + 1;
 
-    // 上面的三种情况, 还需要递归调用
+    // 上面的三种情况, 需要递归调用
     return getFirstK(array, length, k, start, end);        
 }
 

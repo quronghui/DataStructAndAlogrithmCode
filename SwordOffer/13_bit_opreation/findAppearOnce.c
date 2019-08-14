@@ -37,7 +37,7 @@ int findAppearingOnce(int number[], int length)
             int bit = number[i] & bitMask;
             if(bit != 0)
                 bitSum[j] += 1;
-            bitMask = bitMask << 1;     // 左移
+            bitMask = bitMask << 1;     // 左移掩码位, 实现按位与;
         }
     }
     //  通过计算得到出现一次的值

@@ -33,14 +33,13 @@ int partition(int *data, int length, int start, int end )
     // 排序所有的元素，除了最后位置的枢纽元素；
     int small = start - 1;  // 为了排序时避免涉及到枢纽元素
     for( center = start; center < end; ++center ){
-        // 小于中间枢纽的元素进行交互
+        // 中间枢纽的元素进行交互
         if( data[center] < data[end] ){      //比较的还是枢纽元素
             ++ small;
             if( small != center )
                 swap(&data[center], &data[small]);
         }
     }
-
     // 将枢纽元素放回中间位置
     ++ small;   //一开始是减1的
     swap(&data[small], &data[end]);

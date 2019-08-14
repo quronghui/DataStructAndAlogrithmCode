@@ -1,14 +1,16 @@
 // 面试题67(二)：Int型整数，转化为字符串；
 /*
-*   1. 解题思路：
+*   1. 解题思路一：
         a. 去掉整数的的十位，百位和千位..., 只保留数字；
         b. 注意：转换后的顺序是倒的；
+    2. 解题思路二: 
+        通过一个函数sprintf();
 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-/*************整数转换为字符串************/
 
+/************* 解题思路一：整数转换为字符串************/
 char *itoa(int num, char *str, int radix)
 {
     char index[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";  //索引表
@@ -42,6 +44,17 @@ char *itoa(int num, char *str, int radix)
     return str;        
 }
 
+/*************解题思路二: sprintf****************/
+char *numberToString(int n, char *str)
+{
+    if(n<0)
+        return 0;
+    sprintf(str, "%d", n);  //  write to the character string str.直接将数字n转化为字符串
+    
+    return str;
+}
+
+
 /****************Test code*****************/
 void Test(char *name, int num, char *str, int radix)
 {
@@ -49,7 +62,10 @@ void Test(char *name, int num, char *str, int radix)
         printf("%s begin:   ", name);
     
     printf("the string is %s\n", itoa(num, str, radix));
+
+    printf("sprintf string is %s\n", numberToString(num, str) );
 }
+
 // test1
 void test1()
 {

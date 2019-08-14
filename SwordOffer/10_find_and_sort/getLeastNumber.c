@@ -60,7 +60,7 @@ void Test(char *name, int *input, int length, int *expected, int k)
     else 
          printf("The input is invalid, we don't expect any result.\n");
 
-    // 调用方法二：
+    // 调用方法一：
     printf("Result for solution.\n");
     int *output = malloc(sizeof(int) * k);
     getKnumber_ByPartition(input, length, output, k);

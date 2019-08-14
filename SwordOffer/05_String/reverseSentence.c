@@ -10,6 +10,7 @@
 */
 #include <stdio.h>
 #include <string.h>
+
 /***************字符串的全部翻转*****************/
 void Reserve( char *pBegin, char *pEnd )
 {

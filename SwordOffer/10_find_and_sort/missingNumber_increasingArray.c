@@ -27,11 +27,9 @@ int getMissing( const int *array, int length )
         int number = (right + left)>>1;
         // 下标和值不相等, 只可能出现在m的右边
         if( array[number] != number ){
-
             if( number==0 || ( array[number-1] == number-1  ))
                 return number;
             right = number - 1;     // 只可能出现在右边;
-
         }
         else 
             left = number + 1;

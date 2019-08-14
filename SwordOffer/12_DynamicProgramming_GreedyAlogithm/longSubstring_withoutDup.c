@@ -1,11 +1,12 @@
 // 面试题48：最长不含重复字符的子字符串
 // 题目：请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子
 // 字符串的长度。假设字符串中只包含从'a'到'z'的字符。
-// 扩展: 将这个长的字符串打印出来:
-        // 通过position 的下标和: 
+
+//题目扩展: 将这个长的字符串打印出来: 通过position 得到下标和?
 /*
 *   1.解题注意
         a. 知道如何记录前面的字符串; 使用一个26大小的hash数组,进行记录;
+        b. hash 表的下标: 通过某种当时使得下标地址进行增长; 这个下标也是哟啊查阅的值; 
     2.解题思路一:
         暴力法: 枚举
     3. 解题思路二: 动态规划
@@ -26,6 +27,7 @@ int longSubstring(const char *string)
 {
     int curLength = 0;
     int maxLength = 0;
+
     // 定义hash数组保存重复字符下标
     int *position = (int *)malloc(sizeof(int) * 26);
     memset(position, -1, sizeof(int)*26);   // int 一个是占4byte的

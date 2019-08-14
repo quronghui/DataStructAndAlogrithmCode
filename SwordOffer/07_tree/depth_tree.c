@@ -25,6 +25,7 @@ int depthTree(BinaryTreeNode *pRoot)
 
     return (nLeft > nRight)? (nLeft+1) : ( nRight +1) ; 
 }
+
 /******************Test code*********************/
 void Test( char *name, BinaryTreeNode *pRoot, int expected )
 {

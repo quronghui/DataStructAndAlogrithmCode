@@ -8,9 +8,8 @@
         a. struct 结构体的定义和初始化？
         b. queue 何时为空的判断？
         c. delete 删除节点的方式
-    3. 问题：
-    a. 只允许一次性入队，入队和出队交叉就会出现错误；
-        问题解决// 这里又是容易错误的地方; 需要保证队列为空的时候，rear and front 都指向头结点
+    3. 问题：只允许一次性入队，入队和出队交叉就会出现错?
+        问题解决:  需要保证队列为空的时候，rear and front 都指向头结点
         if(queue->rear == first_node)
             queue->rear = queue->front;
 */
