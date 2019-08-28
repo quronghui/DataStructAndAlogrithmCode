@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/type_convert.dir/type_convert.c.o  -o type_convert 

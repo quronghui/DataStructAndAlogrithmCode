@@ -27,13 +27,45 @@ bool    compare(char *str1, char *str2)
     // 我觉得应该是比较最高位;(打端和小端)
     if(len1 ==  len2){
         for( int i = len1 -1 ; i>=0; i-- ){
-            if( str1[i] > str2 )
+            if( str1[i] > str2[i] )
                 return true;
             else if(str1 < str2)
                 return false;
         }
     }
     return true;
+}
+
+// d 大数的减法 -- 结果不包括小数点
+// 用长度为len1的大整数p1 减去 长度为len2的大整数p2
+// 结果存在p1中，返回值代表结果的长度
+int SubStract(int *p1, int len1, int *p2, int  len2)
+{
+    if(len1 < len2)
+        return -1;
+    // 判断两个字符串的差值
+    if(len1 == len2){
+        for( int i = len1-1; i>=0; i-- ){
+            if(p1[i] > p2[i])  // 若大，则满足条件，可做减法
+                break;
+            else if( p1[i] < p2[i] ) 
+                return -1;
+        }
+    }
+    // 从低位开始做减法
+    for( int i = 0; i <= len1-1; i++ ){
+        p1[i] -= p2[i];
+        if(p1[i] < 0){  // 需要进行借位;
+            p1[i] += 10;
+            p1[i+1]--;
+        }
+    }
+    for(int i = len1-1; i>=0; i--){
+        if(p1[i])                               // 最高位第一个不为0
+            return (i+1);                  // 得到位数并返回
+    }
+
+    return 0;       // 两个数相等则返回0;
 }
 
 // c. 大数除法---结果不包括小数点
@@ -52,19 +84,39 @@ int division( char *str1, char *str2, char  *sum )
     
     // 计算两者相差位数
     int number = len1 - len2;
-
+     // 将除数扩大，使得除数和被除数位数相等
+    for(int i = len1-1; i >= 0; i--){
+        if(i >= number)
+            strr2[i] = strr2[i - number];
+        else 
+            strr2[i] = 0;  // 将低位置为0; 
+    }
+     
+     //  重复调用，同时记录减成功的次数，即为商
+    len2 = len1;
+    int  n; // 记录Subtract函数返回值
+    for(int i =0; i <= number; i++){
+        while( (n = SubStract(strr1, len1, strr2 + i, len2 - i) ) >= 0 )
+            len1 = n;   
+    }
+    
+    // 返回商的值 
+    int x = 0;
+    for(int i = len1-1; i >= 0; i--)
+        sum[x++] = strr1[i] + 48;
+    
+    return len1;
 }
 
 int main()
 {
-    int len;
     char    str1[MAX] = {0};    //保存第一个大数
     char    str2[MAX] = {0};    // 保存第二个大数
     char    sum[MAX] = {0};     // 计算结果;
     char    summ[MAX] = {0};
 
     // a. 输入两个字符串
-    scanf("%d %d", str1, str2);     //数组名代表首地址
+    scanf("%s %s", str1, str2);     //数组名代表首地址
     // b. 比较两个字符串的大小
     if( !compare(str1, str2) ){
         char num[MAX] ;
@@ -72,6 +124,20 @@ int main()
         strcpy(str1, str2);
         strcpy(str2, num);
     }
+    int len = division(str1, str2, sum);
+    if(len > 0){
+        while(len > 0){
+            len = division(str2, sum, summ);
+            strcpy(str2, sum);
+            strcpy(sum, summ);
+            memset(summ, 0, sizeof(summ));
+        }
+        printf("最大公约数为: %s \n", str2);
+    }
+    else if(len == 0)
+        printf("最大公约数为: %s \n", str2);
+    else 
+        printf("1 \n" );
 
     return 0;
 }

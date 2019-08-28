@@ -105,7 +105,7 @@
 + [array -- 如何动态申请二维数组空间](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/04_FindInpartialySortMatrix/mallocTwoD_array.c)
 + [String : 代码实现atoi函数的功能, 字符串转换到int类型](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/Atio.c)
 + [String: 代码实现itoa的功能, Int型整数，转化为字符串](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/Itoa.c)
-+ [hash -- 保存和查找 (字符串中第一个只出现一次的字符). ](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/05_String/firstNotRepeatingChar.c)
++ [hash -- 保存和查找 (字符串中第一个只出现一次的字符)](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/05_String/firstNotRepeatingChar.c)
 + [link -- 单向链表插入和删除的API](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/one_list.c)
 + [stack -- 栈的创建, 入栈和出栈的API](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/08_stack/link_stack.c) 
 + [queue -- 队列的创建, 入队和出队API](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/08_queue/link_queue.c)
@@ -119,14 +119,20 @@
 
 ### 大疆
 
-+ [题目一: 实现一个循环缓冲区.  ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/circularReadWrite.c)
-+ [题目二: 当一个char类型的变量, 赋值超过其范围的最大值, 此时应该怎么处理呢?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/charConvertint.c)
-+ [ 题目三:  结构体和联合体的内存字节对齐计算?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/sizeofStructUnion.c)
-+ [ 题目四: 有符号变量（负数）与无符号变量（正数）的相加](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/numberNegAddPos.c)
-+ [题目五: 忽略字母大小写的差异, 实现字符串比较?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/strncmp.c)
++ [题目一: OS 实现一个循环缓冲区.  ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/circularReadWrite.c)
++ [题目二:  C -- 当一个char类型的变量, 赋值超过其范围的最大值, 此时应该怎么处理呢?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/charConvertint.c)
++ [ 题目三:  Pragma Pack --  结构体和联合体的内存字节对齐计算?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/sizeofStructUnion.c)
++ [ 题目四: C -- 有符号变量（负数）与无符号变量（正数）的相加](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/numberNegAddPos.c)
++ [题目五: Strcpy -- 忽略字母大小写的差异, 实现字符串比较 ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/strncmp.c)
 
 ### 网易
 
 + [题目一: 构建每位同学的百分比, 方便查询;] -- 没实现
-+ [题目二: 实现大数的辗转相除法, 利用字符串计算最大公约数] -- 没实现
++ [题目二: 实现大数的辗转相除法, 利用字符串计算最大公约数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/2_网易/calculation.c)
 
+### 华为
+
++ 还未完成 [题目一: string + hal -- 构造哈希表, 实现一个字符串的解析](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/3_Hawei/string_analysis.c)
++ [题目二: bit 在一个整数中找出和5相同的块的个数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/3_Hawei/numberBlock.c)
+
++ 

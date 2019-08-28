@@ -11,7 +11,7 @@ ElementType Element;
 /* 冒泡排序 */
 void	BubbleSort(int *array, int length);
 /* insert order */
-void insertionSort(ElementType a[], int N);
+void InsertSort(ElementType a[], int N);
 /* shell sort */
 void shell_Sort(ElementType a[], int N);
 /* binary heap sort */

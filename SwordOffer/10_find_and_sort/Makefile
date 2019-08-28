@@ -3,12 +3,13 @@ CC	=	gcc
 CFLAGS	=	-g -Wall
 INCLUDE	=	-I.
 #Objs
-# all:	 quick_sort rotating_array
+all:	 quick_sort rotating_array
 # all:	moreHalfNum
 # all:	getLeastNumber
 # all:	inversePair_mergeSort
 # all:	missingNumber_increasingArray
-all:	value_incArray
+# all:	value_incArray
+# all:	sort
 
 ###########目标文件编译###########
 quick_sort:	quick_sort.o 
@@ -32,6 +33,8 @@ missingNumber_increasingArray:	missingNumber_increasingArray.o
 value_incArray:	value_incArray.o 
 	$(CC) $^	-o 	$@
 
+sort:	sort.o
+	$(CC) $^	-o 	$@
 
 ########## .o 文件的编译#########
 quick_sort.o: quick_sort.c
@@ -55,6 +58,8 @@ missingNumber_increasingArray.o: missingNumber_increasingArray.c
 value_incArray.o: value_incArray.c
 	$(CC) $(CFLAGS) -c $(INCLUDE) $< -o $@
 
+sort.o	:	sort.c sort.h
+	$(CC) $(CFLAGS) -c $(INCLUDE) $< -o $@
 
 #clean
 clean:	
@@ -62,7 +67,7 @@ clean:
 	-rm  quick_sort rotating_array
 	-rm moreHalfNum getLeastNumber
 	-rm inversePair_mergeSort missingNumber_increasingArray
-	-rm	value_incArray
+	-rm	value_incArray sort
 	-rm *.o 
 	@echo "cleaning complie"
 .PHONY:	clean

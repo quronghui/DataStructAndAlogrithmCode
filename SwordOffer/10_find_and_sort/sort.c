@@ -8,36 +8,34 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdlib.h>
+#include <assert.h>
 #include "sort.h"
 
 /* 冒泡排序 */
 void	BubbleSort(int *array, int length)
 {
-	for(int i = 0; i < length - 1; i++){
-        // 注意j是从后往前的
-        for(int j = length - 1; j >= i; j--){
-            if( array[j] > array[j+1] ){     /*前者大于后者*/
-                int tmp = array[j];
-                array[j]    =   array[j+1];
-                array[j+1]  =   tmp;                
+	for(int i = 0; i < length-1 ; i++){
+        for(int j = i+1; j <length ; j++){
+            if( array[i] > array[j] ){    
+                int tmp = array[i];
+                array[i]    =   array[j];
+                array[j]  =   tmp;                
             }
         }
     }
 }
 
 /* insert_sort   */
-void insertionSort(ElementType a[], int N)
+void InsertSort(int *array, int length)
 {
-    ElementType tmp;
-    int j;
-    for ( int i = 1; i < N; i++){
-        tmp = a[i];         // 下一个需要插入的元素
-
-        // 前面已排好序的 ( i-1 ) 个元素;
-        for(int j = i; j>0 && a[j-1]>tmp; j--)  
-            a[ j ] = a[j-1];                                    // 前面的大于 tmp, 则移动覆盖
-        
-        a[ j ] = tmp;                                          // 最后一个位置处理
+    // 从第二个元素才需要插入排序
+    for ( int i = 1; i < length; i++){
+        int tmp = array[i];                      // 设置哨兵元素
+        int j =i;                                           // 前面已经排好序的( i - 1 )个元素
+        for(; j > 0 && array[j-1] > tmp;  j--)  
+            array[ j ] = array[j-1];                                    // 前面的大于 tmp, 则移动覆盖
+        array[ j ] = tmp;                                          // 最后一个位置处理
     }
 }
 
@@ -46,23 +44,23 @@ void insertionSort(ElementType a[], int N)
 *   2)元素之间的比较：a[i + h(k)] < a[i - h(k)]，对应元素之间的比较
 *   3)每次删除的逆序对，不止一个逆序对；
 */
-void shell_Sort(ElementType a[], int N)
+void shell_Sort(int *array, int length)
 {
     int i, j, increment;
-    ElementType tmp;
+    int tmp;
 
     /* h(k) = N/2 ; 每次一半进行递减*/
-    for(increment = N/2; increment > 0; increment /= 2)
+    for(increment = length/2; increment > 0; increment /= 2)
         /* 循环：完后后半部分（N/2）每个元素，和前半部分元素之间的比较*/
-        for(i = increment; i < N; i++){
-            tmp = a[i];     /* 后半部分数组 */
-            for(j = i; j >= increment; j -= increment)
-                /* 包含在fork循环中的，if-else是一条语句 */
-                if( a[j-increment] > tmp  )     // 消除逆序对
-                    a[j] = a[j - increment];
+        for(i = increment; i < length; i++){
+            tmp = array[i];                                                                 /* 后半部分数组 */
+            for(j = i; j >= increment; j -= increment){      // 消除逆序对
+                if( array[j-increment] > tmp  )     
+                    array[j] = array[j - increment];
                 else 
                     break;  /* 这里break后，就不执行 j -= increment 这条语句 */
-            a[j] = tmp;
+            }
+            array[j] = tmp;
         }
 }
 
@@ -71,7 +69,7 @@ void shell_Sort(ElementType a[], int N)
 *   2)delete_min：得到从小到大的排序数组
 *   3)注意:  0位置包含元素的
 */
-#define leftchild(i) (2*(i) + 1)        // 根据层数判断树中节点的个数
+#define leftchild( i ) (2*(i) + 1)        // 根据层数: 判断树中节点的个数
 
 void PercDown(ElementType a[], int i, int N)
 {
@@ -98,14 +96,14 @@ void swap(int *i, int *j)
     j = k;
 }
 // 堆排序的调用函数
-void heapsort(ElementType a[], int N)
+void heapsort(int  *array, int  length)
 {
     int i;
-    for(i = N/2; i >= 0; i--)   /*build heap*/
-        PercDown(a, i, N);
-    for(i = N -1; i > 0; i--){
-        swap(&a[0], &a[i]);     /* delete_max */
-        PercDown(a, 0, i);
+    for(i = length/2; i >= 0; i--)   /*build heap*/
+        PercDown(array, i, length);
+    for(i = length -1; i > 0; i--){
+        swap(&array[0], &array[i]);     /* delete_max */
+        PercDown(array, 0, i);
     }
 }
 
@@ -116,47 +114,120 @@ void heapsort(ElementType a[], int N)
 *       3）最后用新的数组进行插入归并排序
 */
 
-/* merge 合并函数 */
-void merge(int a[], int tmparray[], int left, int center, int right )
+/* merge 将两部分元素进行合并为一个数组 */
+void merge(int *array, int *tmparray, int lpos, int rpos, int rightEnd )
 {
-    int j, k, l;
-    for( k = left, j = center + 1; (left <= center) && (j<=right); k++){
-        if( a[left] < a[j] )
-            tmparray[k] =   a[left++];
+    int leftEnd =   rpos -1;            // 左半部分的最大值
+    int tmpPos  =   lpos;
+    int numElement = rightEnd - lpos + 1;       // 每次需要合并的元素个数
+
+    /* main loop  两部分元素个数相等的时候*/
+    while(lpos <= leftEnd  && rpos <= rightEnd)
+        // 判断两部分元素中, 那一部分比较大
+        if(array[lpos] <= array[rpos])
+            tmparray[tmpPos++] = array[lpos++];
         else 
-            tmparray[k] =   a[j++];
-    }
-    if(left <= center){
-        for(int l=0; l <= center -left; l++)
-            tmparray[k+1] = a[left+1];          /* 将剩余的复制到新数组中 */
-    }
-    if(j <= right){
-        for(l=  0; l <= right-j; l++)
-            tmparray[k+1] = a[j+1];
-    }
+            tmparray[tmpPos++] = array[rpos++];
+    
+    while(lpos <= leftEnd)      /*  左半部分的元素 > 右半部分的元素 */
+        tmparray[tmpPos++] = array[lpos++];
+    while(rpos <= rightEnd)     /* 或者: 右半部分的元素 > 左半部分的元素 */
+        tmparray[tmpPos++] = array[rpos++];
+    
+    /* 将合并好的元素放到原数组里面*/
+    for(int i=0; i < numElement; i++, rightEnd--)
+        array[rightEnd] = tmparray[rightEnd];
+
 }
-// 对数组进行分别排序, 然后在进行合并
-void Msort(int a[], int tmparray[], int left, int right)
+
+// 将数组划分为: 单一的元素, 在两部分进行合并
+// 递归划分, 递归合并;
+void Msort(int *array, int *tmparray, int left, int right)
 {
+    // 将其分为最小的单个数组元素, 然后在一一合并;
     int center;
     if(left < right){
         center = (left + right) / 2;
-        Msort(a, tmparray, left, center);
-        Msort(a, tmparray, center+1, right);
-        merge(a, tmparray, left, center+1, right);  /* 最后的合并程序*/
+        Msort(array, tmparray, left, center);
+        Msort(array, tmparray, center+1, right);
+       
+        // 如果两部分数组都已经排好序了, 就直接调用这个函数
+        merge(array, tmparray, left, center+1, right);  /* 最后的合并程序*/
     }
 }
-/* merge sort  */
-void mergesort(int a[], int N)
-{
-    int *tmparray;  // 用于存储的数组;
 
-    tmparray = malloc(N * sizeof(int));
+/* merge sort  */
+// 需要建一个N大小的数组空间
+void mergesort(int *array, int length)
+{
+
+    int *tmparray = malloc(length * sizeof(int));
+   // 动态分配的数组部位
     if(tmparray != NULL){
-        Msort(a, tmparray, 0, N-1);
+        Msort(array, tmparray, 0, length-1);
         free(tmparray);
     }
     else 
         printf("no space for tmp array!!!");
 }
 
+
+/**************BubbleSort test****************/
+void test1(int *array, int length)
+{
+    BubbleSort(array, length);
+    
+    printf("BubbleSort Test: ");
+    for(int i=0; i < length; i++)
+        printf("%d ", array[i]);
+    printf("\n");
+}
+
+/************InsertSort*************/
+void test2(int *array, int length)
+{
+    InsertSort(array, length);
+    
+    printf("InsertSort Test: ");
+    for(int i=0; i < length; i++)
+        printf("%d ", array[i]);
+    printf("\n");
+}
+
+/************shell_Sort*************/
+void test3(int *array, int length)
+{
+    shell_Sort(array, length);
+    
+    printf("shell_Sort Test: ");
+    for(int i=0; i < length; i++)
+        printf("%d ", array[i]);
+    printf("\n");
+}
+
+/************mergesort*************/
+void test4(int *array, int length)
+{
+    mergesort(array, length);
+    
+    printf("mergesort Test: ");
+    for(int i=0; i < length; i++)
+        printf("%d ", array[i]);
+    printf("\n");
+}
+
+/**************Test code***************/
+int  main()
+{
+    int array[] = { 3, 0, 1, 4, 7, 5, 6, 10, 2 };
+    int length = sizeof(array) / sizeof(array[0]);
+    
+    // test1(array, length);
+    // test2(array, length);
+    // test3(array, length);
+    test4(array, length);
+
+
+    
+    return 0;
+}

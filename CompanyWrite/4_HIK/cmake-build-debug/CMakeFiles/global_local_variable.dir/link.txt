@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/global_local_variable.dir/global_local_variable.c.o  -o global_local_variable 
