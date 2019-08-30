@@ -3,13 +3,13 @@ CC	=	gcc
 CFLAGS	=	-g -Wall
 INCLUDE	=	-I.
 #Objs
-all:	 quick_sort rotating_array
+# all:	 quick_sort rotating_array
 # all:	moreHalfNum
 # all:	getLeastNumber
 # all:	inversePair_mergeSort
 # all:	missingNumber_increasingArray
 # all:	value_incArray
-# all:	sort
+all:	sort
 
 ###########目标文件编译###########
 quick_sort:	quick_sort.o 

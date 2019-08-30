@@ -8,17 +8,6 @@
 
 + <剑指offer> 和 <C和指针> 书中的代码
 
-### 相关博客内容和题目汇集
-
-1. [数组](https://luckywater.top/2019/06/15/一维数组和二维数组的查找/)
-2. [字符串](https://luckywater.top/2019/06/26/String/)
-3. [链表](https://luckywater.top/2019/06/15/单链表和双链表插入/#more)
-4. [栈和队列](https://luckywater.top/2019/03/07/LinuxCStackAndQueue/)
-5. [树的应用](https://luckywater.top/2019/05/17/tree/)
-6. [算法和数据描述相关问题](https://luckywater.top/2019/05/25/algorithm-design/)
-7. [高质量代码需要考虑的方面 (16题-26题)](https://luckywater.top/2019/06/26/高质量代码/)
-8. [优化时间和空间效率(39-52题](https://luckywater.top/2019/07/06/优化时间和空间效率/)
-
 ### SwordOffer
 
 - [面试题3(一): array -- 找出数组中重复的数字 (交换元素直到number[j] == j) ](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/03_Array/duplicate_array.c)
@@ -135,4 +124,4 @@
 + 还未完成 [题目一: string + hal -- 构造哈希表, 实现一个字符串的解析](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/3_Hawei/string_analysis.c)
 + [题目二: bit 在一个整数中找出和5相同的块的个数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/3_Hawei/numberBlock.c)
 
-+ 
+

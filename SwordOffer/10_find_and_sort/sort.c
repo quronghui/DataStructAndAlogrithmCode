@@ -118,7 +118,7 @@ void heapsort(int  *array, int  length)
 void merge(int *array, int *tmparray, int lpos, int rpos, int rightEnd )
 {
     int leftEnd =   rpos -1;            // 左半部分的最大值
-    int tmpPos  =   lpos;
+    int tmpPos  =   lpos;               // 新数组起始元素
     int numElement = rightEnd - lpos + 1;       // 每次需要合并的元素个数
 
     /* main loop  两部分元素个数相等的时候*/
@@ -145,9 +145,8 @@ void merge(int *array, int *tmparray, int lpos, int rpos, int rightEnd )
 void Msort(int *array, int *tmparray, int left, int right)
 {
     // 将其分为最小的单个数组元素, 然后在一一合并;
-    int center;
+    int center = (left + right) / 2;;
     if(left < right){
-        center = (left + right) / 2;
         Msort(array, tmparray, left, center);
         Msort(array, tmparray, center+1, right);
        
@@ -160,6 +159,8 @@ void Msort(int *array, int *tmparray, int left, int right)
 // 需要建一个N大小的数组空间
 void mergesort(int *array, int length)
 {
+    if(array == NULL || length < 0)
+        return ;
 
     int *tmparray = malloc(length * sizeof(int));
    // 动态分配的数组部位
