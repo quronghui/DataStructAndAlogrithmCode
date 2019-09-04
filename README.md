@@ -102,7 +102,10 @@
 + [algorithm -- 快速排序](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/quick_sort.c)
 + [algorithm -- 其他排序](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/sort.c)
 + [algorithm -- 二分查找](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/binary_search.c)
-+ [ 高质量代码 --  判断两个double类型的值是否相等]((https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/14_CodeQuality_Integrity/equal_judge.c))
++ [ 高质量代码 --  判断两个double类型的值是否相等](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/14_CodeQuality_Integrity/equal_judge.c)
++ [memcpy -- 函数的实现和优化](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/c_library/my_memcpy.cpp)
++ [strpy -- 实现字符串的复制，strcpy和strcnpy](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/c_library/my_strcpy.cpp)
++ [strcmp -- 忽略字母大小写的差异, 实现字符串**比较**](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/strncmp.c)
 
 ## 各公司的笔试题
 
@@ -112,7 +115,6 @@
 + [题目二:  C -- 当一个char类型的变量, 赋值超过其范围的最大值, 此时应该怎么处理呢?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/charConvertint.c)
 + [ 题目三:  Pragma Pack --  结构体和联合体的内存字节对齐计算?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/sizeofStructUnion.c)
 + [ 题目四: C -- 有符号变量（负数）与无符号变量（正数）的相加](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/numberNegAddPos.c)
-+ [题目五: Strcpy -- 忽略字母大小写的差异, 实现字符串比较 ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/strncmp.c)
 
 ### 网易
 
