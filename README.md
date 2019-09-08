@@ -107,6 +107,10 @@
 + [strpy -- 实现字符串的复制，strcpy和strcnpy](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/c_library/my_strcpy.cpp)
 + [strcmp -- 忽略字母大小写的差异, 实现字符串**比较**](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/strncmp.c)
 
+### input
+
++ [input -- 实现键盘输入一串数字，通过空格隔开；最后以回车结尾，将其保存到数组中](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/input/value_save_array.c)
+
 ## 各公司的笔试题
 
 ### 大疆

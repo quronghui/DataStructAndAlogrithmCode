@@ -17,6 +17,3 @@
     * 实现strcpy: 
     * 实现strncpy
    ```
-
-   
-
