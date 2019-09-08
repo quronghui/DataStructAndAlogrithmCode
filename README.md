@@ -109,7 +109,7 @@
 
 ### input
 
-+ [input -- 实现键盘输入一串数字，通过空格隔开；最后以回车结尾，将其保存到数组中](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/input/value_save_array.c)
++ [input -- 实现键盘输入一串数字，通过空格隔开；最后以回车结尾，将其保存到数组中](/SwordOffer/input/value_save_array.c)
 
 ## 各公司的笔试题
 
