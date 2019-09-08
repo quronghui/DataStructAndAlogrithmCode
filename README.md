@@ -103,8 +103,8 @@
 + [algorithm -- 其他排序](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/sort.c)
 + [algorithm -- 二分查找](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/10_find_and_sort/binary_search.c)
 + [ 高质量代码 --  判断两个double类型的值是否相等](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/14_CodeQuality_Integrity/equal_judge.c)
-+ [memcpy -- 函数的实现和优化](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/c_library/my_memcpy.cpp)
-+ [strpy -- 实现字符串的复制，strcpy和strcnpy](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/c_library/my_strcpy.cpp)
++ [memcpy -- 函数的实现和优化](/SwordOffer/c_library/my_memcpy.cpp)
++ [strpy -- 实现字符串的复制，strcpy和strcnpy](/SwordOffer/c_library/my_strcpy.cpp)
 + [strcmp -- 忽略字母大小写的差异, 实现字符串**比较**](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/strncmp.c)
 
 ### input

@@ -1,7 +1,7 @@
 // 题目一：实现键盘输入一串数字，通过空格隔开；最后以回车结尾，将其保存到数组中；
 
 #include <stdio.h>
-
+#include <cstdio>
 /**********C实现***********/
 void value_save_array()
 {
