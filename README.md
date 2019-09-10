@@ -113,21 +113,15 @@
 
 ## 各公司的笔试题
 
-### 大疆
++ [ OS 实现一个循环缓冲区.  ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/circularReadWrite.c)
++ [C -- 当一个char类型的变量, 赋值超过其范围的最大值, 此时应该怎么处理呢?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/charConvertint.c)
++ [C -- 有符号变量（负数）与无符号变量（正数）的相加](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/numberNegAddPos.c)
++ [ Pragma Pack --  结构体和联合体的内存字节对齐计算?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/sizeofStructUnion.c)
 
-+ [题目一: OS 实现一个循环缓冲区.  ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/circularReadWrite.c)
-+ [题目二:  C -- 当一个char类型的变量, 赋值超过其范围的最大值, 此时应该怎么处理呢?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/charConvertint.c)
-+ [ 题目三:  Pragma Pack --  结构体和联合体的内存字节对齐计算?](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/sizeofStructUnion.c)
-+ [ 题目四: C -- 有符号变量（负数）与无符号变量（正数）的相加](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/numberNegAddPos.c)
-
-### 网易
-
-+ [题目一: 构建每位同学的百分比, 方便查询;] -- 没实现
-+ [题目二: 实现大数的辗转相除法, 利用字符串计算最大公约数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/2_网易/calculation.c)
-
-### 华为
++ [构建每位同学的百分比, 方便查询;] -- 没实现
++ [C 实现大数的辗转相除法, 利用字符串计算最大公约数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/2_网易/calculation.c)
 
 + 还未完成 [题目一: string + hal -- 构造哈希表, 实现一个字符串的解析](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/3_Hawei/string_analysis.c)
-+ [题目二: bit 在一个整数中找出和5相同的块的个数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/3_Hawei/numberBlock.c)
++ [Bit --  在一个整数中找出和5相同的块的个数](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/3_Hawei/numberBlock.c)
 
-
++ [array -- 实现一个三维数组的遍历](/SwordOffer/03_Array/three_array.c)
