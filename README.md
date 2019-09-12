@@ -14,6 +14,7 @@
 - [面试题3(二): array -- 找出数组中重复的数字 (递归二分遍历次数) ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/03_Array/duplicate_no_edit_array.c)
 - [面试题 4： 二维数组中元素的查找 (二维矩阵: 矩阵右上角到左下角进行查找)](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/04_FindInpartialySortMatrix/find_in_matrix.c)
 - [面试题5：string-- **替换**字符串中的空格( 通过特殊字符替换字符串中的 "#", " ")](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/string_replace.c)
+  - [如何将字符串中的特殊字符替换为一个空格]
 - [面试题6：link -- 从尾到头打印链表 (递归打印)](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/print_link_form_tail_to_head.c)
 - [ 面试题 7 ：tree -- 根据前序遍历和中序遍历，构建一颗二叉树 ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/construct_binary_tree.c)
 - [面试题 8：tree-- 二叉树中序遍历的下一个节点(节点有指向父结点的指针)](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/next_binary_tree_node.c)
@@ -106,10 +107,14 @@
 + [memcpy -- 函数的实现和优化](/SwordOffer/c_library/my_memcpy.cpp)
 + [strpy -- 实现字符串的复制，strcpy和strcnpy](/SwordOffer/c_library/my_strcpy.cpp)
 + [strcmp -- 忽略字母大小写的差异, 实现字符串**比较**](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/CompanyWrite/1_Dji/strncmp.c)
++ 
 
-### input
+### Input_output
 
-+ [input -- 实现键盘输入一串数字，通过空格隔开；最后以回车结尾，将其保存到数组中](/SwordOffer/input/value_save_array.c)
++ [input -- 实现键盘输入一串数字，通过空格隔开；最后以回车结尾，将其保存到数组中](/SwordOffer/Input_output/value_save_array.c)
++ [sprintf -- sprintf 的用法:将各种格式的数转化为字符串](/SwordOffer/Input_output/std_sprintf.c)
++ [fprintf -- fprintf 的用法：以使得信息输出到指定的文件流](/SwordOffer/Input_output/std_fprintf.c)
++ 
 
 ## 各公司的笔试题
 
