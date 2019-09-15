@@ -15,7 +15,7 @@
 - [面试题 4： 二维数组中元素的查找 (二维矩阵: 矩阵右上角到左下角进行查找)](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/04_FindInpartialySortMatrix/find_in_matrix.c)
 - [面试题5：string-- **替换**字符串中的空格( 通过特殊字符替换字符串中的 "#", " ")](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/string_replace.c)
   - [如何将字符串中的特殊字符替换为一个空格]
-- [面试题6：link -- 从尾到头打印链表 (递归打印)](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/print_link_form_tail_to_head.c)
+- [面试题6：list -- 从尾到头打印链表 (递归打印)](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/print_link_form_tail_to_head.c)
 - [ 面试题 7 ：tree -- 根据前序遍历和中序遍历，构建一颗二叉树 ](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/construct_binary_tree.c)
 - [面试题 8：tree-- 二叉树中序遍历的下一个节点(节点有指向父结点的指针)](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/next_binary_tree_node.c)
 - [面试题10：algorithm  -- 斐波那契数列，青蛙跳台阶](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/09_recursion_and_loop/fibonacci.c)
@@ -97,6 +97,7 @@
 + [String: 代码实现itoa的功能, Int型整数，转化为字符串](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/Itoa.c)
 + [hash -- 保存和查找 (字符串中第一个只出现一次的字符)](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/05_String/firstNotRepeatingChar.c)
 + [link -- 单向链表插入和删除的API](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/one_list.c)
++ [double_list -- 双向链表的插入和](/SwordOffer/06_List/double_list.c)
 + [stack -- 栈的创建, 入栈和出栈的API](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/08_stack/link_stack.c) 
 + [queue -- 队列的创建, 入队和出队API](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/08_queue/link_queue.c)
 + [tree -- 链式构建二叉搜索树,实现节点的插入，递归遍历](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/07_tree/link_binary_search_tree.c)
@@ -112,9 +113,14 @@
 ### Input_output
 
 + [input -- 实现键盘输入一串数字，通过空格隔开；最后以回车结尾，将其保存到数组中](/SwordOffer/Input_output/value_save_array.c)
+
++ [input -- scanf,gets,fgets ](/SwordOffer/Input_output/std_input.c)
+
 + [sprintf -- sprintf 的用法:将各种格式的数转化为字符串](/SwordOffer/Input_output/std_sprintf.c)
+
 + [fprintf -- fprintf 的用法：以使得信息输出到指定的文件流](/SwordOffer/Input_output/std_fprintf.c)
-+ 
+
+  
 
 ## 各公司的笔试题
 
