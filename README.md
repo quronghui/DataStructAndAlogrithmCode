@@ -96,6 +96,7 @@
 + [string -- 代码实现atoi函数的功能, 字符串转换到int类型](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/Atio.c)
 + [string -- 代码实现itoa的功能, Int型整数，转化为字符串](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/05_String/Itoa.c)
 + [string -- 实现字符串的重新排列，按照数字，小写字母，大写字母，其他字符，进行输出？](/SwordOffer/05_String/string_reset.c)
++ [string -- 统计一个字符串的长度？不适用strlen函数？](/SwordOffer/05_String/string_length.c)
 + [hash -- 保存和查找 (字符串中第一个只出现一次的字符)](https://github.com/quronghui/DataStructAndAlogrithmCode/tree/master/SwordOffer/05_String/firstNotRepeatingChar.c)
 + [link -- 单向链表插入和删除的API](https://github.com/quronghui/DataStructAndAlogrithmCode/blob/master/SwordOffer/06_List/one_list.c)
 + [double_list -- 双向链表的插入和](/SwordOffer/06_List/double_list.c)

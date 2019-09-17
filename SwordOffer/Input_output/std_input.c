@@ -47,7 +47,7 @@ void std_fgets()
     int size = 10;
     char buff[size];
     // 只读size-1 个字节
-    fgets(buff,size,stdin);     //从标准输入流中读入
+    fgets(buff,size,stdin);     //从标准输入流中读入，会将结尾的'\n'一起读入；
     printf("%s", buff);
     // 加了while 就是一直读入，只要stdin有输入的时候，就会往buff中放
 //    while (fgets(buff,size,stdin) != NULL) {
